@@ -1,0 +1,28 @@
+label{
+    padding: 20px;
+}
+.login{
+    margin: 25px;
+
+}
+.login-fields{
+    float: right;
+    box-sizing: border-box;
+    background-color: lightgray;
+    border-radius: 5px;
+    width: 400px;
+    height: 300px;
+}
+img{
+    width: 50%;
+    float: left;
+    padding-bottom: 25px;
+}
+input{
+    border-radius: 5px;
+}
+button{
+   border-radius: 5px;
+   margin-left: 180px;
+   background-color: blue;
+}
