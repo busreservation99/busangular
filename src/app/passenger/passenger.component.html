@@ -1,0 +1,14 @@
+<div>
+    <form (ngSubmit)="addPassenger()">
+        <div class="passengers">
+            <label>Enter Name: </label>
+            <input type="text" name="name" [(ngModel)]=passenger.name /><br />
+            <label>Enter Phone Number:</label>
+            <input type="number" name="phone" [(ngModel)]=passenger.phoneNumber />
+            <label>Enter Email:</label>
+            <input type="email" name="email" [(ngModel)]=passenger.email />
+            <button type="submit">Add Passenger </button>
+        </div>
+    </form>
+</div>
+<h4>{{message}}</h4>

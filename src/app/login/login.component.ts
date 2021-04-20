@@ -21,11 +21,11 @@ export class LoginComponent  {
       alert(JSON.stringify(response));
       console.log(response);
       if(response.status == true) {
-        let customerId = response.customerId;
+        let registrationId = response.registrationId;
         let customerName = response.name;
-        sessionStorage.setItem('customerId', String(customerId));
+        sessionStorage.setItem('registrationId', String(registrationId));
         sessionStorage.setItem('customerName', customerName);
-        this.message=response['message'];
+        this.router.navigate(['dashboard']);
         
       }
       else

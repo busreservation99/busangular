@@ -9,6 +9,9 @@ import { RegistrationComponent } from './registration/registration.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
+import { PassengerComponent } from './passenger/passenger.component';
+import { ShowticketComponent } from './showticket/showticket.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { LoginComponent } from './login/login.component';
     NavbarComponent,
     RegistrationComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    PassengerComponent,
+    ShowticketComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
