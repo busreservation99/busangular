@@ -1,1 +1,27 @@
-<p>home works!</p>
+<div class="frm"> 
+    <form (ngSubmit)="fetchBus()">
+        <label>From</label>
+        <input type="text" name="from" [(ngModel)]=searchBus.source />
+        <label>To</label>
+        <input type="text" name="to" [(ngModel)]=searchBus.destination/>
+        <label>Date of journey</label>
+        <input type="date" name="date" [(ngModel)]=searchBus.date/>
+        <button type="submit">Search Bus</button>
+    </form>
+</div>
+<div class="display" *ngIf="data">
+    <label>Bus Name:</label>
+    <label>Bus Type:</label>
+    <label>Fare: </label>    
+    <label>DepartureTime:</label>
+    <label>ArrivalTime:</label>
+    </div>
+
+<div *ngFor="let d of data">
+    <br />
+    
+
+<label>{{d[0]}}</label> <label>{{d[1]}}</label> <label>{{d[2]}}</label> <label>{{d[3]}}</label> <label>{{d[4]}}</label><button (click)="
+bookNow()">Book Now</button>
+</div>
+
