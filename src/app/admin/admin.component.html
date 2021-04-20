@@ -1,0 +1,65 @@
+<div class="main">
+    <form (ngSubmit)="addbus()">
+        <label>Enter Bus Number</label><br />
+        <input type="number" name="busnumber" [(ngModel)]=bus.busNumber/><br/>
+        <label>Enter Bus Type</label><br />
+        <input type="text" name="bustype" [(ngModel)]=bus.busType /><br/>
+        <label>Bus Name</label><br />
+        <input type="text" name="busname" [(ngModel)]=bus.busName /><br />
+        <label>Source</label><br />
+        <input type="text" name="source" [(ngModel)]=bus.source /><br />
+        <label>Destination</label><br />
+        <input type="text" name="destination" [(ngModel)]=bus.destination /><br />
+        <button type="submit">Add Bus</button>
+    </form>
+</div>
+<h3>{{messagebus}}</h3>
+
+<div class="route">
+    <form (ngSubmit)="addroute()">
+        <label>Enter Bus Number</label><br/>
+        <input type="number" name="busnumber" [(ngModel)]=route.bus.busNumber /><br/>
+        <label>Enter Route Name</label><br/>
+        <input type="text" name="routename" [(ngModel)]=route.busStopName /><br/>
+        <label>Fare</label><br/>
+        <input type="number" name="fare" [(ngModel)]=route.fare /><br/>
+        <label>Stop Arrival Time</label><br/>
+        <input type="text" name="arrivaltime" [(ngModel)]=route.stopArrivalTime /><br/>
+        <label>Stop Departure Time</label><br/>
+        <input type="text" name="departuretime" [(ngModel)]=route.stopDepartureTime /><br/>
+        <button type="submit">Add Route</button>
+    </form>
+</div>
+<h3>{{messageroute}}</h3>
+
+
+ <div class="sch">
+    <form (ngSubmit)="addschedule()">
+        <label>Enter Bus Number</label><br/>
+        <input type="number" name="busnumber" [(ngModel)]=schedule.bus.busNumber /><br/>
+        <label>Bus Arrival Date</label><br/>
+        <input type="date" name="busArrivalDate" [(ngModel)]=schedule.busArrivalDate /><br/>
+        <label>Bus Departure Date</label><br/>
+        <input type="date" name="busDepartureDate" [(ngModel)]=schedule.busDepartureDate /><br/>
+        <label>Bus Arrival Time</label><br/>
+        <input type="text" name="busArrivaltime" [(ngModel)]=schedule.arrivalTime /><br/>
+        <label>Bus Departure Time</label><br/>
+        <input type="text" name="busDeparturetime" [(ngModel)]=schedule.departureTime /><br/>
+        <button type="submit">Add Schedule</button>
+    </form>
+</div> 
+
+<h3>{{messageschedule}}</h3>
+
+
+<div>
+    <form (ngSubmit)="addseat()">
+        <label>Enter bus Number</label><br />
+        <input type="number" name="busnumber" [(ngModel)]=busseat.bus.busNumber />
+        <label>Add Schedule Id</label>
+        <input type="number" name="id" [(ngModel)]=busseat.busNumber />
+        <label>Add No. of Seats</label>
+        <input type="number" name="number" [(ngModel)]=busseat.noOfSeats/>
+        <button>Add Seat</button>
+    </form>
+</div>
