@@ -12,6 +12,9 @@ import { LoginComponent } from './login/login.component';
 import { PassengerComponent } from './passenger/passenger.component';
 import { ShowticketComponent } from './showticket/showticket.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { SearchResultComponent } from './search-result/search-result.component';
+import { SeatsComponent } from './seats/seats.component';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     LoginComponent,
     PassengerComponent,
     ShowticketComponent,
-    DashboardComponent
+    DashboardComponent,
+    SearchResultComponent,
+    SeatsComponent
+
   ],
   imports: [
     BrowserModule,

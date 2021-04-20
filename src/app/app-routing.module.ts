@@ -1,3 +1,5 @@
+import { SeatsComponent } from './seats/seats.component';
+import { SearchResultComponent } from './search-result/search-result.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -13,8 +15,10 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'passenger',component:PassengerComponent},
   {path:'showticket',component:ShowticketComponent},
-  {path:'dashboard',component:DashboardComponent}
- 
+  {path:'dashboard',component:DashboardComponent},
+  {path:'searchResult', component:SearchResultComponent},
+  {path:'seats', component:SeatsComponent}
+
 ];
 
 @NgModule({

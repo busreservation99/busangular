@@ -9,6 +9,24 @@
         <button type="submit">Search Bus</button>
     </form>
 </div>
+
+<div class="display" *ngIf="data">
+    <label>Bus Name:</label>
+    <label>Bus Type:</label>
+    <label>Fare: </label>    
+    <label>DepartureTime:</label>
+    <label>ArrivalTime:</label>
+    </div>
+
+<div *ngFor="let d of data">
+    <br />
+    
+
+<label>{{d[0]}}</label> <label>{{d[1]}}</label> <label>{{d[2]}}</label> <label>{{d[3]}}</label> <label>{{d[4]}}</label><button (click)="
+bookNow()">Book Now</button>
+</div>
+
+
 <div *ngFor="let d of data">
     <br />
     <p>
@@ -20,3 +38,4 @@ ArrivalTime:{{d[4]}}
     </p>
 
 </div>
+

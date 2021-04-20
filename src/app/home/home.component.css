@@ -6,3 +6,9 @@ label{
     padding: 5px;
 }
 
+label{
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+    align-self: center;
+}

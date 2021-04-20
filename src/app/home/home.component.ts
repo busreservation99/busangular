@@ -16,18 +16,22 @@ export class HomeComponent  {
 
   data:any;
   
+  seatsSelected:number;
   
   constructor(private searchBusService:SearchBusService, private router: Router) { }
-  fetchBus(){
 
-    
+  fetchBus(){
+  
     this.searchBusService.fetchBus(this.searchBus).subscribe(response => {
       // alert(JSON.stringify(response));
       console.log(response);
-      this.data=response;
+      this.data=response
+
     })
   }
-  }
-   
-    
 
+  bookNow(){
+    this.router.navigate(['seats']);
+  }
+
+}
