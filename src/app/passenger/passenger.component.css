@@ -1,0 +1,13 @@
+label{
+    padding: 7px;
+}
+input{
+    border-radius: 5px;
+}
+button{
+    border-radius: 5px;
+    margin-left: 180px;
+    background-color: blue;
+    float: right;
+    margin-right: 300px;
+ }

@@ -1,0 +1,11 @@
+<div class="search-ticket">
+    <form (ngSubmit)="searchTicket()"id="showticketform">
+        <div class="show-ticket">
+            <h4 style="text-align: center">Search Ticket</h4>
+            <label>Enter Booking id:</label>
+            <input type="number" size="5" name="ticket" [(ngModel)]="ticketId" ><br>
+            <button class="btb btn-primary" type="submit">Show Ticket</button>
+        </div>
+</form>
+</div>
+<h4>{{message}}</h4>
