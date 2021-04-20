@@ -9,7 +9,12 @@ import { RegistrationComponent } from './registration/registration.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
+<<<<<<< HEAD
 import { AdminComponent } from './admin/admin.component';
+=======
+import { SearchResultComponent } from './search-result/search-result.component';
+import { SeatsComponent } from './seats/seats.component';
+>>>>>>> 80e984fd58d422dd3939f472797f88be119fd7f8
 
 @NgModule({
   declarations: [
@@ -18,7 +23,12 @@ import { AdminComponent } from './admin/admin.component';
     RegistrationComponent,
     HomeComponent,
     LoginComponent,
+<<<<<<< HEAD
     AdminComponent
+=======
+    SearchResultComponent,
+    SeatsComponent
+>>>>>>> 80e984fd58d422dd3939f472797f88be119fd7f8
   ],
   imports: [
     BrowserModule,
