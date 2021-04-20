@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent  {
+
   searchBus:SearchBus= new SearchBus();
   
   message:String;
@@ -17,13 +18,15 @@ export class HomeComponent  {
   
   
   constructor(private searchBusService:SearchBusService, private router: Router) { }
+
   fetchBus(){
+
 
     
     this.searchBusService.fetchBus(this.searchBus).subscribe(response => {
       // alert(JSON.stringify(response));
       console.log(response);
-      this.data=response;
+      this.data=response
 
     })
   }
@@ -31,7 +34,5 @@ export class HomeComponent  {
   bookNow(){
     this.router.navigate(['seats']);
   }
-  }
-   
-    
 
+}

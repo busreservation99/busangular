@@ -26,4 +26,8 @@ button{
      top: 140px;
      margin-right: 97px;
  }
- 
+ .main{
+     position: absolute;
+     left: 650px;
+     top:15px
+ }
