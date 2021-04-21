@@ -20,7 +20,6 @@ export class AdminComponent  {
 
   bus:Bus = new Bus();
 
-
   messagebus:string;
   messageroute:string;
   messageschedule:string;

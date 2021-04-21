@@ -11,7 +11,7 @@ export class ShowticketComponent  {
   ticketId:number;
   searchTicket(){
     if(this.ticketId==12345){
-      this.message="Booking id:125        Bus Number:203 Source: Borivali Mumbai Destination:Pune"
+      this.message="Booking id:125 Bus Number:203 Source: Borivali Mumbai Destination:Pune"
          
     }
     else{

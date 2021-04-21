@@ -1,4 +1,5 @@
-<div class="main">
+
+<div  class="main">
     <form (ngSubmit)="addbus()">
         <label>Enter Bus Number</label><br />
         <input type="number" name="busnumber" [(ngModel)]=bus.busNumber/><br/>
@@ -15,7 +16,7 @@
 </div>
 <h3>{{messagebus}}</h3>
 
-<div class="route">
+<div  class="route">
     <form (ngSubmit)="addroute()">
         <label>Enter Bus Number</label><br/>
         <input type="number" name="busnumber" [(ngModel)]=route.bus.busNumber /><br/>
@@ -52,7 +53,7 @@
 <h3>{{messageschedule}}</h3>
 
 
-<div>
+<!-- <div>
     <form (ngSubmit)="addseat()">
         <label>Enter bus Number</label><br />
         <input type="number" name="busnumber" [(ngModel)]=busseat.bus.busNumber />
@@ -62,4 +63,4 @@
         <input type="number" name="number" [(ngModel)]=busseat.noOfSeats/>
         <button>Add Seat</button>
     </form>
-</div>
+</div> -->
