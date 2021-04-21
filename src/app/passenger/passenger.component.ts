@@ -1,5 +1,7 @@
+import { Passenger } from './../appmodel/Passenger';
 import { Component, OnInit } from '@angular/core';
-import { Passenger } from '../appmodel/passeneger';
+import { Passengers } from '../appmodel/Passengers';
+
 import { PassengerService } from '../passenger-service.service';
 
 @Component({
@@ -10,17 +12,46 @@ import { PassengerService } from '../passenger-service.service';
 export class PassengerComponent {
 
   message:string;
-  passenger :Passenger = new Passenger();
 
-  constructor(private service:PassengerService){}
+  passenger:Passenger = new Passenger();
+ 
+
+  passengers:Passengers= new Passengers();
+
+  constructor(private service:PassengerService){
+    
+  }
+  // addPassenger(){
+  //   this.passenger.busSeat.seatId=263;
+  //   this.passenger.booking.id=230;
+  //   this.passengers.passengers.push(this.passenger);
+  //  this.service.savePassenger(this.passengers).subscribe(data =>{
+  //   alert(JSON.stringify(data));
+  //   console.log(data);
+  //   this.message=data['message'];
+  //   this.passengers.passengers=[];
+  //  })
+  // }
+
   addPassenger(){
-   this.service.savePassenger(this.passenger).subscribe(data =>{
+    this.passenger.busSeat.seatId=263;
+    this.passenger.booking.id=230;
+    this.passengers.passengers.push(this.passenger);
+    this.passenger=new Passenger();
+  }
+  
+addAllPassengers(){
+
+    // this.passengers.passengers.push(this.passenger);
+   this.service.savePassenger(this.passengers).subscribe(data =>{
     alert(JSON.stringify(data));
     console.log(data);
     this.message=data['message'];
-
+    this.passengers.passengers=[];
    })
-
-
- }
 }
+ }
+
+
+
+

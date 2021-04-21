@@ -1,6 +1,29 @@
-<p>
-    <h1>Select Seats</h1>
+<p>It works</p>
 
-<div *ngFor="let s of seats">
-    <input type="checkbox" value="{{s}}">
+<!-- <div *ngFor="let s of seats">
+       <input type="checkbox" name={{s}} value={{s}}>
+</div> -->
+
+<!-- <input type="checkbox" name="1" value="1" (change)="changeFn($event)"><br>
+<input type="checkbox" name="2" value="2" (change)="changeFn($event)"><br>
+<input type="checkbox" name="3" value="3" (change)="changeFn($event)"><br>
+<input type="checkbox" name="4" value="4" (change)="changeFn($event)"><br>
+<input type="checkbox" name="5" value="5" (change)="changeFn($event)"><br>
+<input type="checkbox" name="6" value="6" (change)="changeFn($event)"><br>
+<input type="checkbox" name="7" value="7"(change)="changeFn($event)"><br>
+<input type="checkbox" name="8" value="8"(change)="changeFn($event)"><br>
+
+<div>
+    <input [value]="foo" (change)="changeFn($event)">
+    <p>{{ foo }}</p>
+    <input [ngModel]="bar" (ngModelChange)="modelChangeFn($event)">
+    <p>{{ bar }}</p>
+  </div> -->
+<div>
+  <label *ngFor="let hobby of hobbies" #checkbox class="mdl-checkbox mdl-js-checkbox">
+    <input type="checkbox" name="hobbies" [value]="hobby" 
+    (change)="populateMyHobbies(hobby,$event.target.checked)" class="mdl-checkbox__input">
+    <span class="mdl-checkbox__label">{{hobby}}</span>
+</label>
+<button (click)="faltufn()"> Display Data</button>
 </div>

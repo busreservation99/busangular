@@ -11,4 +11,8 @@
         </div>
     </form>
 </div>
+<div *ngFor="let p of passengers.passengers">
+{{p.name}}
+</div>
+<button (click)="addAllPassengers()">Add Passengers </button>
 <h4>{{message}}</h4>
