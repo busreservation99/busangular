@@ -1,18 +1,65 @@
-<div>
-    <form (ngSubmit)="addPassenger()">
+<!--<div>
+    <form (ngSubmit)="addPassenger()" >
         <div class="passengers">
             <label>Enter Name: </label>
             <input type="text" name="name" [(ngModel)]=passenger.name /><br />
             <label>Enter Phone Number:</label>
-            <input type="number" name="phone" [(ngModel)]=passenger.phoneNumber />
+            <input type="number" name="phone" [(ngModel)]=passenger.phoneNumber /><br />
             <label>Enter Email:</label>
-            <input type="email" name="email" [(ngModel)]=passenger.email />
+            <input type="email" name="email"  [(ngModel)]=passenger.email />
             <button type="submit">Add Passenger </button>
         </div>
     </form>
 </div>
-<div *ngFor="let p of passengers.passengers">
-{{p.name}}
+<button (click)="addAllPassengers()">Add Passengers </button>
+<div class="display" *ngIf="true">
+    <label>Name</label>
+    <label>Email</label>
+    <label>Phone Number</label>
+</div>
+<table>
+    <tr>
+        <div *ngFor="let p of passengers.passengers, let i = index">
+            <td style="padding: 20px">{{p.name}}</td>
+            <td style="padding: 20px">{{p.email}} </td>
+            <td style="padding: 20px">{{p.phoneNumber}}</td>
+            <td><button (click)="remove(p)">Remove</button></td>
+        </div>
+    </tr>
+</table>
+
+<h4>{{message}}</h4>
+
+-->
+<div>
+    <form [formGroup]="userForm">
+        <div class="passengers">
+            <label>Enter Name: </label>
+            <input type="text" name="name" formControlName="name" [(ngModel)]=passenger.name /><br />
+            <label>Enter Phone Number:</label>
+            <input type="number" name="phone" formControlName="phoneNumber" [(ngModel)]=passenger.phoneNumber /><br />
+            <label>Enter Email:</label>
+            <input type="email" name="email" formControlName="email" [(ngModel)]=passenger.email />
+            <button (click)="add()">Add  </button>
+            
+        </div>
+    </form>
 </div>
 <button (click)="addAllPassengers()">Add Passengers </button>
+<div class="display" *ngIf="true">
+    <label>Name</label>
+    <label>Email</label>
+    <label>Phone Number</label>
+</div>
+<table>
+    <tr>
+        <div *ngFor="let p of passengers">
+            <td style="padding: 20px">{{p.name}}</td>
+            <td style="padding: 20px">{{p.email}} </td>
+            <td style="padding: 20px">{{p.phoneNumber}}</td>
+            <td><button (click)="remove(p)">Remove</button></td>
+        </div>
+    </tr>
+</table>
+
 <h4>{{message}}</h4>

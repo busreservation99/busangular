@@ -12,7 +12,8 @@ export class PassengerService {
   constructor(private http: HttpClient) { }
 
   savePassenger(passengers:Passengers) : Observable <object>{
-    let url = "http://localhost:8181/addPassengers";
+    let url = "http://localhost:8181/addPassengers2";
     return this.http.post(url,passengers);
   }
+ 
 }
