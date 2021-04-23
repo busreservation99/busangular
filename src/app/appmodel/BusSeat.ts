@@ -3,7 +3,7 @@ import { Schedule } from './Schedule';
 export class BusSeat{
     seatId:number;	 
     bus:Bus=new Bus();	 
-    seatAvailableStatus:string;	 
+    status:string;	 
     schedule:Schedule=new Schedule();	 
     seatNumber:number;
 }

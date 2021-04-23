@@ -1,5 +1,14 @@
+<div class="sidebar">
+    <div>
+        <button (click)="toggleShow()">Add Bus</button>
+        <button (click)="toggleShow1()">Add Route</button>
+        <button (click)="toggleShow2()">Add Schedule</button>
+        <button (click)="toggleShow3()">Show All Bus</button>
+        <button (click)="toggleShow4()">Add Seats</button>
+    </div>
+</div>
 
-<div  class="main">
+<div *ngIf="isShown"  class="main">
     <form (ngSubmit)="addbus()">
         <label>Enter Bus Number</label><br />
         <input type="number" name="busnumber" [(ngModel)]=bus.busNumber/><br/>
@@ -16,7 +25,7 @@
 </div>
 <h3>{{messagebus}}</h3>
 
-<div  class="route">
+<div *ngIf="isShown1"  class="route">
     <form (ngSubmit)="addroute()">
         <label>Enter Bus Number</label><br/>
         <input type="number" name="busnumber" [(ngModel)]=route.bus.busNumber /><br/>
@@ -31,10 +40,11 @@
         <button type="submit">Add Route</button>
     </form>
 </div>
+
 <h3>{{messageroute}}</h3>
 
 
- <div class="sch">
+ <div *ngIf="isShown2" class="sch">
     <form (ngSubmit)="addschedule()">
         <label>Enter Bus Number</label><br/>
         <input type="number" name="busnumber" [(ngModel)]=schedule.bus.busNumber /><br/>
@@ -53,14 +63,29 @@
 <h3>{{messageschedule}}</h3>
 
 
-<!-- <div>
+  <div *ngIf="isShown4">
     <form (ngSubmit)="addseat()">
         <label>Enter bus Number</label><br />
-        <input type="number" name="busnumber" [(ngModel)]=busseat.bus.busNumber />
-        <label>Add Schedule Id</label>
-        <input type="number" name="id" [(ngModel)]=busseat.busNumber />
-        <label>Add No. of Seats</label>
-        <input type="number" name="number" [(ngModel)]=busseat.noOfSeats/>
+        <input type="number" name="busnumber" [(ngModel)]=busSeatStatus.busSeat.bus.busNumber /><br />
+        <label>Enter Schedule Id</label><br />
+        <input type="number" name="busnumber" [(ngModel)]=busSeatStatus.busSeat.schedule.scheduleId /><br />
+        <label>Add No. of Seats</label><br />
+        <input type="number" name="number" [(ngModel)]=busSeatStatus.noOfSeats/><br />
         <button>Add Seat</button>
     </form>
-</div> -->
+</div>  
+
+<h3>{{messageseat}}</h3>
+
+<div *ngIf="isShown3">
+
+    <div *ngFor="let b of busdetail">
+        {{b[0]}}<br/>
+        {{b[1]}}<br/>
+        {{b[2]}}<br/>
+        {{b[3]}}<br/>
+        {{b[4]}}<br/>
+    </div>
+</div>
+
+
