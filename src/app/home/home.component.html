@@ -12,6 +12,7 @@
 
 <div class="display" *ngIf="data">
     <label>Bus Name:</label>
+    <label>Bus Number:</label>
     <label>Bus Type:</label>
     <label>Fare: </label>    
     <label>DepartureTime:</label>
@@ -22,8 +23,15 @@
     <br />
     
 
-<label>{{d[0]}}</label> <label>{{d[1]}}</label> <label>{{d[2]}}</label> <label>{{d[3]}}</label> <label>{{d[4]}}</label><button (click)="
-bookNow()">Book Now</button>
+<label>{{d[0]}}</label> <label>{{d[1]}}</label> <label>{{d[2]}}</label> <label>{{d[3]}}</label> <label>{{d[4]}}</label><label>{{d[5]}}</label>
+<!-- <button (click)="bookNow()" [value]="d[1]">Book Now</button> -->
+<button #busId #dt (click)="bookNow(busId,dt)" [attr.busNumber]="d[1]" [attr.dtime]="d[4]">Book Now</button>
 </div>
 
 
+<!-- <ul>
+    <li #messageEl *ngFor="let message of messages" [attr.data-messageID]="message.id">
+      {{ message.text }}
+      <br><button (click)="logMessageId(messageEl)">Console Log </button>
+    </li>
+  </ul> -->
