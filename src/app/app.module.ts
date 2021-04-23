@@ -14,6 +14,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { SearchResultComponent } from './search-result/search-result.component';
 import { SeatsComponent } from './seats/seats.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TempComponent } from './temp/temp.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ShowticketComponent,
     DashboardComponent,
     SearchResultComponent,
-    SeatsComponent
+    SeatsComponent,
+    TempComponent
   ],
   imports: [
     BrowserModule,
