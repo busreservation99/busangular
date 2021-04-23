@@ -18,6 +18,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { SearchResultComponent } from './search-result/search-result.component';
 import { SeatsComponent } from './seats/seats.component';
+import { TempComponent } from './temp/temp.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,8 @@ import { SeatsComponent } from './seats/seats.component';
     ShowticketComponent,
     DashboardComponent,
     SearchResultComponent,
-    SeatsComponent
+    SeatsComponent,
+    TempComponent
   ],
   imports: [
     BrowserModule,

@@ -25,13 +25,19 @@ export class HomeComponent  {
     this.searchBusService.fetchBus(this.searchBus).subscribe(response => {
       // alert(JSON.stringify(response));
       console.log(response);
-      this.data=response
+      this.data=response;
 
     })
   }
 
-  bookNow(){
+  bookNow(busId,dt){
+    let messageId = busId.getAttribute('busNumber');
+    let journeytime = dt.getAttribute('dtime');
+    sessionStorage.setItem('busNumber',messageId );
+    sessionStorage.setItem('dtime',journeytime );
+    //let messageId = el.dataset.messageId;
+    console.log("Bus Id: "+messageId+" DTIME "+journeytime);
+    
     this.router.navigate(['seats']);
   }
-
-}
+  }
