@@ -32,5 +32,14 @@ export class LoginComponent  {
         this.message = response.message;
     })
   }
-
+  
+  hello="container"
+  
+  signUpButton()  {
+   this.hello="container right-panel-active";
+  }
+  
+  signInButton()  {
+    this.hello="container";
+   }
 }
