@@ -12,18 +12,14 @@
 
 <div>
   <label *ngFor="let s of seats" #checkbox class="mdl-checkbox mdl-js-checkbox">
-    <input type="checkbox" name="seatId" [value]="s" 
+    <input type="checkbox" name="seatId" [value]="s+1"  [disabled]="seatStatus[s][0]==='N'?true:false"
     (change)="populateMyHobbies(s,$event.target.checked)" class="mdl-checkbox__input">
-    <span class="mdl-checkbox__label">{{s}}</span>
+    <span class="mdl-checkbox__label">{{s+1}}</span>
 </label>
-<button (click)="faltufn()"> Display Data</button><br>
+<button (click)="faltufn()"> Show Total Price:</button><br>
 <label *ngIf="totalPrice">Total Price:{{totalPrice}}</label><br>
 <label *ngIf="totalSeatsBooked">Total Seats Booked:{{totalSeatsBooked}}</label><br>
-<button>Confirm Booking</button>
+<button (click)="confirmBooking()">Confirm Booking</button>
 
-<div *ngFor="let s of seatStatus">
-<label>Seat Status: {{s[0]}}</label>
-<label>Seat Status: {{s[1]}}</label>
 
-</div>
 </div>

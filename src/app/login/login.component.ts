@@ -32,20 +32,14 @@ export class LoginComponent  {
         this.message = response.message;
     })
   }
-
-  hello:string="container"
-  hi:string='ghost';
-  signUp(){
-    this.router.navigate(['register']);
-  }
-
-  signUpButton() {
-
-    this.hello="container right-panel-active";
+  
+  hello="container"
+  
+  signUpButton()  {
+   this.hello="container right-panel-active";
   }
   
   signInButton()  {
     this.hello="container";
-  }
-
+   }
 }
