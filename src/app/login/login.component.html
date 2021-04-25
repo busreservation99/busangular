@@ -1,44 +1,4 @@
-<h4>{{ message }}</h4>
-
-<!--<div class="hello" id="container">
-	<div class="form-container sign-up-container">
-		<form action="#">
-			<h1>Create Account</h1>
-			<span>or use your email for registration</span>
-			<input type="text" placeholder="Name" />
-			<input type="email" placeholder="Email" />
-			<input type="password" placeholder="Password" />
-			<button>Sign Up</button>
-		</form>
-	</div>
-	<div class="form-container sign-in-container">
-		<form (ngSubmit)="loginCheck()">
-			<h1>Sign in</h1>
-    		<span>or use your account</span>
-			<input type="email"name="email" [(ngModel)]=login.email placeholder="Email" />
-			<input type="password" name="password" [(ngModel)]=login.password placeholder="Password" />
-			<a href="#">Forgot your password?</a>
-			<button >Sign In</button>
-		</form>
-	</div>
-	<div class="overlay-container">
-		<div class="overlay">
-			<div class="overlay-panel overlay-left">
-				<h1>Welcome Back!</h1>
-				<p>To keep connected with us please login with your personal info</p>
-				<button [class]="hello"  id="signIn" (click)="signInButton()" >Sign In</button>
-			</div>
-			<div class="overlay-panel overlay-right">
-				<h1>Hello, Friend!</h1>
-				<p>Enter your personal details and start journey with us</p>
-				<button [class]="hello" id="signUp"  (click)="signUpButton()">Sign Up</button>
-			</div>
-		</div>
-	</div>
-</div>-->
-    
-    
-     <div [class]="hello" id="container">
+<div [class]="hello" id="container">
          <div class="form-container sign-up-container">
              <form (ngSubmit)="addCustomer()">
                  <h1>Create Account</h1>    
@@ -60,16 +20,12 @@
                     <option value="female" name="gender">Female</option>
                     <option value="other" name="gender">Other</option>
                 </select>
-
                 <input type="text" name="comment"  [(ngModel)]=registration.address placeholder="Address"/>
                 <input placeholder = "Date of Birth" name="dob" class = "textbox-n" type = "text" onfocus = "(this.type = 'date')"  id = "date"  [(ngModel)]=registration.dateOfBirth>
-                <!--<label>Date of Birth</label>
-                <input type="date" name="dob" [(ngModel)]=registration.dateOfBirth placeholder="Date of Birth"><br>-->
                 <input type="email" name="email" required pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$" #email="ngModel" [(ngModel)]=registration.email placeholder="Email"><br />
                 <div *ngIf="email.invalid && (email.dirty ||email.touched)" class="alert alert-danger">
                     <div *ngIf="email.errors.pattern" style="color:red">Email should be of type john@..</div>
                 </div>
-                
                 <input type="password" name="password" required #password="ngModel" pattern="^[1-9][0-9]{4}$" [(ngModel)]=registration.password placeholder="Password"><br />
                 <div *ngIf="password.invalid && (password.dirty ||password.touched)" class="alert alert-danger">
                     <div *ngIf="password.errors.pattern" style="color:red">Password should be of 5 digits </div>
