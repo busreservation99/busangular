@@ -1,5 +1,6 @@
 img{
     width: 50%;
+    height: 50%;
     float: left;
 }
 label{
@@ -8,26 +9,31 @@ label{
 input{
     border-radius: 5px;
 }
+body {
+    text-align: center;
+}
+form {
+    display: inline-block;
+}
 button{
     border-radius: 5px;
     margin-left: 180px;
     background-color: blue;
-    float: right;
-    margin-right: 300px;
+    color: white;
+    width: 20%;
+    height: 20%;
+    display: inline;
+    margin-right: 280px;
  }
-.registration{
+ .registration{
      box-sizing: border-box;
      background-color: lightgray;
-     float: right;
      border-radius: 5px;
+     display: inline-block;
  }
  #usrform{
      position: absolute;
      top: 140px;
      margin-right: 97px;
  }
- .main{
-     position: absolute;
-     left: 650px;
-     top:15px
- }
+ 

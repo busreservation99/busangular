@@ -6,9 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./temp.component.css']
 })
 export class TempComponent implements OnInit {
-
-  constructor() { }
-
+  
+  constructor() {
+    let ar:number[]=[1,2,3,4,5];
+    
+   }
+ 
   ngOnInit(): void {
   }
   name = 'Angular';
@@ -40,4 +43,6 @@ export class TempComponent implements OnInit {
     console.log("Message Id: ", messageId);
 
   }
+ 
+
 }

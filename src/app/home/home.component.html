@@ -10,24 +10,24 @@
     </form>
 </div>
 
-<div class="display" *ngIf="data">
+<!-- <div class="display" *ngIf="data">
     <label>Bus Name:</label>
     <label>Bus Number:</label>
     <label>Bus Type:</label>
     <label>Fare: </label>    
     <label>DepartureTime:</label>
     <label>ArrivalTime:</label>
-    </div>
+    </div> -->
 
-<div *ngFor="let d of data">
+<!-- <div *ngFor="let d of data">
     <br />
     
 
 <label>{{d[0]}}</label> <label>{{d[1]}}</label> <label>{{d[2]}}</label> <label>{{d[3]}}</label> <label>{{d[4]}}</label><label>{{d[5]}}</label>
-<!-- <button (click)="bookNow()" [value]="d[1]">Book Now</button> -->
-<button #busId #dt (click)="bookNow(busId,dt)" [attr.busNumber]="d[1]" [attr.dtime]="d[4]">Book Now</button>
-</div>
 
+<button #busId #sid (click)="bookNow(busId,sid)" [attr.busNumber]="d[1]" [attr.schid]="d[6]">Book Now</button>
+</div> -->
+<!-- <button (click)="bookNow()" [value]="d[1]">Book Now</button> -->
 
 <!-- <ul>
     <li #messageEl *ngFor="let message of messages" [attr.data-messageID]="message.id">
@@ -35,3 +35,30 @@
       <br><button (click)="logMessageId(messageEl)">Console Log </button>
     </li>
   </ul> -->
+  
+  
+  <div class="container">
+    <div *ngFor="let d of data">
+    <div class="course">
+        <div class="preview">
+            <h6>{{d[2]}}</h6>
+            <h2>{{d[0]}}</h2>
+            <a href="#">{{d[1]}}</a>
+        </div>
+        <div class="info">
+            <div class="progress-wrapper">
+                <div class="progress"></div>
+                <span class="progress-text">4/9 Seats Filled</span>
+            </div>
+            <h5>Fare {{d[3]}} </h5><br><h3> Mumbai --> Goa</h3><br>
+            <h4>Departure Time:{{d[4]}}</h4><br>
+            <h4>Arrival Time:{{d[5]}}</h4>
+            
+            <button class="btn" #busId #sid (click)="bookNow(busId,sid)" [attr.busNumber]="d[1]" [attr.schid]="d[6]">Book Now</button>
+        </div>
+    </div>
+    <br>
+    
+</div>
+
+  </div>

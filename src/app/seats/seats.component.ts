@@ -1,3 +1,4 @@
+import { PassingSeat } from './../appmodel/PassingSeat';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FetchSeatStatusService } from '../fetch-seat-status.service';
@@ -8,7 +9,7 @@ import { FetchSeatStatusService } from '../fetch-seat-status.service';
   styleUrls: ['./seats.component.css']
 })
 export class SeatsComponent implements OnInit {
-
+   
   totalPrice:number=null;
   
   totalSeatsBooked:number=null;
@@ -21,36 +22,43 @@ export class SeatsComponent implements OnInit {
   
   selectedHobbies = [];
 
+  disabledSeats = [];
+
   seatsBooked=[];
+ 
+  busno;
 
+  dis:boolean;
+
+  sid;
+  
+  passingseat : PassingSeat = new PassingSeat();
   constructor(private router: Router,private fetchSeatStatusService:FetchSeatStatusService) { }
-  
+  ngOnInit(): void {   
+    this.busno=sessionStorage.getItem('busNumber');
+    this.sid=sessionStorage.getItem('schid');
+    this.fetchSeatStatus(); 
+ 
+  }
+
+
   fetchSeatStatus(){
-      this.fetchSeatStatusService.fetchSeatStatusBus(101,219).subscribe(response => {
+      this.fetchSeatStatusService.fetchSeatStatusBus(this.busno,this.sid).subscribe(response => {
       this.seatStatus=response;
-      console.log(this.seatStatus);
-      this.loopFn();
-        for(let i=1;i<=this.seatStatus.length;i++){
-          
-        this.seats.push(i);
-    }
-  
+          for (let i = 0; i <this.seatStatus.length; i++) {
+            this.seats.push(i);   
+          }    
     })
+    
   }
 
-
-
-   
-  ngOnInit(): void {
-    this.fetchSeatStatus();  
-   
-  }
-  
+ 
 
 populateMyHobbies(value , status:boolean)
-{
+{ 
     if(this.seatsBooked.indexOf(value) === -1 && status)
     {
+      
         this.seatsBooked.push(value);
         // console.log(this.selectedHobbies);
     }
@@ -63,42 +71,18 @@ populateMyHobbies(value , status:boolean)
 //     console.log(this.selectedHobbies);
 }
 faltufn(){
-console.log(this.seatsBooked);
-this.totalPrice=this.seatsBooked.length*this.price;
-this.totalSeatsBooked=this.seatsBooked.length;
-console.log(" Total Price="+this.totalPrice+" Total seats booked= "+this.totalSeatsBooked.toString());
-}
-
-loopFn(){
-    // this.seatStatus.forEach((e) => {
-    //   console.log(e);
-    for(let i=0;i<this.seatStatus.length;i++){
-      if(this.seatStatus[i][0]==="Y"){
-        console.log("Jhakas")
-      }
-      for(let j=0;j<this.seatStatus[i].length;j++){
-        // "this.seatStatus[i][j] 
-          // console.log("seats available at "+this.seatStatus[i][1]+" and status is "+this.seatStatus[i][0]);
-         
-      }}
-// })
-}
+      console.log(this.seatsBooked);
+      this.totalPrice=this.seatsBooked.length*this.price;
+      this.totalSeatsBooked=this.seatsBooked.length;
+      console.log(" Total Price="+this.totalPrice+" Total seats booked= "+this.totalSeatsBooked.toString());
 
 }
 
+confirmBooking(){
+  this.router.navigate(['passenger']);
+  sessionStorage.setItem('seatsBooked',JSON.stringify(this.seatsBooked));
+  sessionStorage.setItem('totalSeats',JSON.stringify(this.seatsBooked.length));
+  this.passingseat.seatconfirm=this.seatsBooked;
 
-// populateMyHobbies(value , status:boolean)
-// {
-//     if(this.selectedHobbies.indexOf(value) === -1 && status)
-//     {
-//         this.selectedHobbies.push(value);
-//         // console.log(this.selectedHobbies);
-//     }
-//     else if(!status)
-//     {
-//         let index = this.selectedHobbies.indexOf(value);
-//         this.selectedHobbies.splice(index, 1);
-//         // console.log(this.selectedHobbies);
-//     }
-// //     console.log(this.selectedHobbies);
-// }
+}
+}

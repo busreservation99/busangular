@@ -1,3 +1,4 @@
+import { Schedule } from './../appmodel/Schedule';
 import { SearchBusService } from './../search-bus.service';
 import { SearchBus } from './../appmodel/searchBus';
 import { Component, OnInit } from '@angular/core';
@@ -30,13 +31,14 @@ export class HomeComponent  {
     })
   }
 
-  bookNow(busId,dt){
+  bookNow(busId,sid){
     let messageId = busId.getAttribute('busNumber');
-    let journeytime = dt.getAttribute('dtime');
+    let schid = sid.getAttribute('schid');
+  
     sessionStorage.setItem('busNumber',messageId );
-    sessionStorage.setItem('dtime',journeytime );
+    sessionStorage.setItem('schid',schid );
     //let messageId = el.dataset.messageId;
-    console.log("Bus Id: "+messageId+" DTIME "+journeytime);
+    console.log("Bus Id: "+messageId+" schid "+schid);
     
     this.router.navigate(['seats']);
   }
