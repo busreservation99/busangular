@@ -1,13 +1,25 @@
 <div class="main">
     <form id="usrform" (ngSubmit)="addCustomer()">
+        <img src="assets/signup.png" alt="Login">
         <div class=registration>
-            <h4 style="text-align: center">Register</h4>
+            <h3 style="text-align: center">Register</h3>
             <label>Enter First Name:</label>
-            <input type="text" name="firstname" [(ngModel)]=registration.firstName><br>
+            <input type="text" name="firstname" required #firstname="ngModel" [(ngModel)]=registration.firstName><br>
+            <div *ngIf="firstname.invalid && (firstname.dirty ||firstname.touched)" class="alert alert-danger"> 
+                <div *ngIf="firstname.errors.required" style="color:red">First Name is required</div>
+            </div>
+            
             <label>Enter Last Name:</label>
-            <input type="text" name="lastname" [(ngModel)]=registration.lastName><br>
+            <input type="text" name="lastname" required #lastname="ngModel" [(ngModel)]=registration.lastName><br>
+            <div *ngIf="lastname.invalid && (lastname.dirty ||lastname.touched)" class="alert alert-danger"> 
+                <div *ngIf="lastname.errors.required" style="color:red">Last Name is required</div>
+            </div>
+            
             <label>Enter Contact Number:</label>
-            <input type="number" size="10" name="contact" [(ngModel)]=registration.contact><br>
+            <input type="number" name="contact" required #contact="ngModel" pattern="^[1-9][0-9]{10}$" [(ngModel)]=registration.contact><br>
+            <div *ngIf="contact.invalid && (contact.dirty ||contact.touched)" class="alert alert-danger"> 
+                <div *ngIf="contact.errors.required" style="color:red">Contact is required</div>
+            </div>
             <label>Gender:</label>
             <input type="radio" id="male" name="gender" value="male" [(ngModel)]=registration.gender>
             <label for="male">Male</label>
@@ -15,15 +27,24 @@
             <label for="female">Female</label>
             <input type="radio" id="other" name="gender" value="other" [(ngModel)]=registration.gender>
             <label for="other">Other</label><br>
+            
             <label>Address:</label>
             <textarea rows="4" cols="50" name="comment" form="usrform" [(ngModel)]=registration.address></textarea><br>
             <label>Date of Birth:</label>
             <input type="date" name="dob" [(ngModel)]=registration.dateOfBirth><br>
+            
             <label>Email:</label>
-            <input type="email" name="email" [(ngModel)]=registration.email><br />
+            <input type="email" name="email" required pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$" #email="ngModel" [(ngModel)]=registration.email><br />
+            <div *ngIf="email.invalid && (email.dirty ||email.touched)" class="alert alert-danger">
+                <div *ngIf="email.errors.pattern" style="color:red">Email should be of type john@..</div>
+            </div>
+          
             <label>Password:</label>
-            <input type="password" name="password" [(ngModel)]=registration.password><br />
-            <button type="submit">Register</button>
+            <input type="password" name="password" required #password="ngModel" pattern="^[1-9][0-9]{5}$" [(ngModel)]=registration.password><br />
+            <div *ngIf="password.invalid && (password.dirty ||password.touched)" class="alert alert-danger">
+                <div *ngIf="password.errors.pattern" style="color:red">Password should be of 5 digits </div>
+            </div>
+            <button class="button" type="submit">Register</button>
 
         </div>
     </form>

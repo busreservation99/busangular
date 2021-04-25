@@ -13,6 +13,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 export class PassengerComponent{
 
   message:string;
+  display:boolean=true;
   passenger:Passenger = new Passenger();
   //passengers:Passengers= new Passengers();
   //passengers: Array<Passenger> = new Array();
@@ -76,6 +77,13 @@ remove(element){
       this.passengers.splice(index,1);
     }
   });
+}
+edit(ele){
+  this.passengers.forEach((value,index) =>{
+    if(value == ele){
+      this.passengers.push(this.userForm.value);
+    }
+  })
 }
 addAllPassengers(){
   sessionStorage.setItem('passengers',JSON.stringify(this.passengers));
