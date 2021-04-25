@@ -1,11 +1,12 @@
 .money{
     text-align: center;
-    border: 1px solid black;
-    width: 150px;
+    width: 200px;
     border-radius: 10px;
     border-color: whitesmoke;
     background-color: whitesmoke;
-    color: black
+    color: black;
+    margin-left: 20px;
+    margin-top: 20px;
 }
 p{
     font-size: 3em;
@@ -13,28 +14,29 @@ p{
 }
 .customercount{
     text-align: center;
-    border: 1px solid black;
-    width: 150px;
+    width: 200px;
     border-radius: 10px;
     border-color: whitesmoke;
     background-color: whitesmoke;
-    color: black;
+    color: black;  
+    margin-left: 20em;
     position: absolute;
-    right: 60em;
-    position: absolute;
-    top: 16.2em;
-    height: 134px;
-    left: 24em;
+    bottom: 50px;
 }
 img{
-    height: 56px;
+    height: 55px;
 }
 #customer{
-color: black;
- position: absolute;
- left: 14em;
- top: 7.2em;
+    position: relative;
+    bottom: 170px;
+    left: 12.6em;
 }
 #revenue{
     color: black;
+    position: relative;
+    top: 42px;
+    left: 39px;
 }
+
+
+

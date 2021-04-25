@@ -2,7 +2,7 @@ button{
     margin-top: 9px;
     position: absolute;
     left: 4.5em;
-    background-color: rgb(62, 62, 196);
+    background-color: #e40046;
     color: white;
     border-radius: 1px;
     outline: 0;
@@ -13,7 +13,7 @@ button{
 }
 .main{
     border: 1px solid black;
-    width: 17em;
+    width: 21em;
     position: absolute;
     top: 17em;
     border-radius: 10px;
@@ -21,32 +21,22 @@ button{
     height: 22.5em;
     background-color: whitesmoke;
     border-color: whitesmoke;
+    font-size: 15px;
 }
 .route{
     padding: 12px;
     border-radius: 10px;    
-    width: 17em;
+    width: 21em;
     border: 1px solid black;
     position: absolute;
-    left:29em;
+    left:35em;
     top: 17em;
     height: 22.5em;
     background-color: whitesmoke;
     border-color: whitesmoke;
+    font-size: 15px;
 }
-.sidebar1{
-    position: absolute;
-    top: 132px;
-    width: 29em;
-    border: 1px solid black;
-    margin-left: 25em;
-    background-color: whitesmoke;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border-color: whitesmoke;
-    height: 3em;
-    block-size: 3em;
-}
+
 .busdetail{
     position: absolute;
     top: 20em;
@@ -56,56 +46,69 @@ th{
     padding: 9px;
 }
 input{
-    width: 14.5em;
+    width: 19em;
     outline: 0;
     border-radius: 5px;
     border-color: rgb(201, 197, 197)
 }
 .sch{
     position: absolute;
-    left: 48.4em;
+    left: 61em;
     top: 17em;
     padding: 12px;
     border-radius: 10px;    
-    width: 17em;
+    width: 21em;
     border: 1px solid black;
     height: 22.5em;
     background-color: whitesmoke;
     border-color: whitesmoke;
+    font-size: 15px;
 }
 .seat{
     position: absolute;
-    right: 13em;
+    right: 7em;
     top: 17em;
     padding: 12px;
     border-radius: 10px;    
-    width: 17em;
+    width: 21em;
     border: 1px solid black;
     height: 15.3em;
     background-color: whitesmoke;
     border-color: whitesmoke;
+    font-size: 15px;
 }
 #showallbusbtn{
     position: absolute;
-    left:19em ;
-    width: 8em;
+    left:60em ;
+    top: 10px;
+    width: 11em;
+    height: 3em;
     bottom: 5px;
-    
 }
 #showanalyticsbusbtn{
     position: absolute;
-    left:2em ;
-    width: 8em;
-    bottom: 5px;
+    left:34em ;
+    top: 10px;
+    height: 3em;
+    width:11em ;
 }
 #showallroutesbtn{
     position: absolute;
-    left:10.4em ;
-    bottom: 5px;
+    left:47em ;
+    top: 10px;
+    height: 3em; 
+    width: 11em;   
 }
 h1{
     position: absolute;
-    top: 140px;
+    top: 26px;
+    left: 1em;
+}
+.center{
+    margin: auto;
+    margin-left: 100px;
+    margin-right: 100px;
+    background-color: blue;
 }
 
 

@@ -2,12 +2,12 @@
   
   body {
     font-family: Arial;
-    background: #f1f1f1;
+    background: #fcfcfc;
     
   }
   
   .header {
-    padding: 10px;
+
     text-align: center;
     background: white;
   }
@@ -21,22 +21,8 @@
   }
   .card {
     background-color: white;
-    padding: 20px;
-    margin-top: 20px;
-    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    border: none;
   }
   
-  .footer {
-    position:absolute;
-    bottom:1px;
-    height: 2.5rem;
-    background: #ddd;
-    text-align: center;
-    width:85%;
-    height: 50px;
-    font-family: sans-serif;
-    padding-top: 1px;
-    
-    
-    
-  }
