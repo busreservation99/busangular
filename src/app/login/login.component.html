@@ -3,6 +3,11 @@
              <form (ngSubmit)="addCustomer()">
                  <h1>Create Account</h1>    
                  <br>
+                 <input type="text" placeholder="Name" />
+                 <input type="email" placeholder="Email" />
+                 <input type="password" placeholder="Password" />
+                
+                 <button>Sign Up</button>
                  <input type="text" name="firstname" required #firstname="ngModel" [(ngModel)]=registration.firstName placeholder="First Name"><br>
                 <div *ngIf="firstname.invalid && (firstname.dirty ||firstname.touched)" class="alert alert-danger"> 
                     <div *ngIf="firstname.errors.required" style="color:red">First Name is required</div>
