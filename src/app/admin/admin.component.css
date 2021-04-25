@@ -1,15 +1,113 @@
-.route{
+button{
+    margin-top: 9px;
     position: absolute;
-    left: 400px;
-    top: 170px;
+    left: 4.5em;
+    background-color: rgb(62, 62, 196);
+    color: white;
+    border-radius: 1px;
+    outline: 0;
+    border-color:whitesmoke;
+    width: 8em;
+    height: 2.3em;
+    border-radius: 6px;
+}
+.main{
+    border: 1px solid black;
+    width: 17em;
+    position: absolute;
+    top: 17em;
+    border-radius: 10px;
+    padding: 12px;
+    height: 22.5em;
+    background-color: whitesmoke;
+    border-color: whitesmoke;
+}
+.route{
+    padding: 12px;
+    border-radius: 10px;    
+    width: 17em;
+    border: 1px solid black;
+    position: absolute;
+    left:29em;
+    top: 17em;
+    height: 22.5em;
+    background-color: whitesmoke;
+    border-color: whitesmoke;
+}
+.sidebar1{
+    position: absolute;
+    top: 132px;
+    width: 29em;
+    border: 1px solid black;
+    margin-left: 25em;
+    background-color: whitesmoke;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-color: whitesmoke;
+    height: 3em;
+    block-size: 3em;
+}
+.busdetail{
+    position: absolute;
+    top: 20em;
+    left: 30em;
+}
+th{
+    padding: 9px;
+}
+input{
+    width: 14.5em;
+    outline: 0;
+    border-radius: 5px;
+    border-color: rgb(201, 197, 197)
 }
 .sch{
     position: absolute;
-    left: 700px;
-    top: 170px;
+    left: 48.4em;
+    top: 17em;
+    padding: 12px;
+    border-radius: 10px;    
+    width: 17em;
+    border: 1px solid black;
+    height: 22.5em;
+    background-color: whitesmoke;
+    border-color: whitesmoke;
 }
-.sidebar{
-    width: 250px;
-    height: 100px;
-    border: solid black 1px;
+.seat{
+    position: absolute;
+    right: 13em;
+    top: 17em;
+    padding: 12px;
+    border-radius: 10px;    
+    width: 17em;
+    border: 1px solid black;
+    height: 15.3em;
+    background-color: whitesmoke;
+    border-color: whitesmoke;
 }
+#showallbusbtn{
+    position: absolute;
+    left:19em ;
+    width: 8em;
+    bottom: 5px;
+    
+}
+#showanalyticsbusbtn{
+    position: absolute;
+    left:2em ;
+    width: 8em;
+    bottom: 5px;
+}
+#showallroutesbtn{
+    position: absolute;
+    left:10.4em ;
+    bottom: 5px;
+}
+h1{
+    position: absolute;
+    top: 140px;
+}
+
+
+
+

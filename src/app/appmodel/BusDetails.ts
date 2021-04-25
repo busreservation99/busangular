@@ -1,3 +1,5 @@
+import { Bus } from "./Bus";
+
 export class BusDetail{
     busName:String;
     busNumber:number;

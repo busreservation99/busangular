@@ -1,0 +1,18 @@
+<div class="frm">
+    <form (ngSubmit)=" fetchroute()">
+        <label>Enter Bus Number</label> : <input type="number" name="route" placeholder="Enter Bus no.." [(ngModel)]=busNumber />
+        <button type="submit">Show</button>
+    </form>
+</div>
+<br/>
+<div class="container" *ngIf="busData && busdest">
+    <div class="heading">
+        {{busData}}&rarr;{{busdest}}
+    </div>
+    <h2>Stops</h2>
+    <div *ngFor="let r of routeData">
+        <ul >
+            <li>{{r[3]}}</li><span>ArrivalTime:-  </span><span>{{r[4]}}</span>
+        </ul>
+      </div>
+</div>

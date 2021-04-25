@@ -15,6 +15,9 @@ import { SearchResultComponent } from './search-result/search-result.component';
 import { SeatsComponent } from './seats/seats.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TempComponent } from './temp/temp.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { AdminShowAllBusesComponent } from './admin-show-all-buses/admin-show-all-buses.component';
+import { ShowRoutesComponent } from './show-routes/show-routes.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,15 +33,17 @@ import { TempComponent } from './temp/temp.component';
     DashboardComponent,
     SearchResultComponent,
     SeatsComponent,
-    TempComponent
+    TempComponent,
+    AdminDashboardComponent,
+    AdminShowAllBusesComponent,
+    ShowRoutesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule,
-    ReactiveFormsModule
-        
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

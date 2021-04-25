@@ -1,14 +1,14 @@
-<div class="sidebar">
+<h1>Welcome Admin</h1>
+<div class="sidebar1">
     <div>
-        <button (click)="toggleShow()">Add Bus</button>
-        <button (click)="toggleShow1()">Add Route</button>
-        <button (click)="toggleShow2()">Add Schedule</button>
-        <button (click)="toggleShow3()">Show All Bus</button>
-        <button (click)="toggleShow4()">Add Seats</button>
+        <button id="showanalyticsbusbtn" (click)="showanalytics()">Show Analytics</button> 
+        <button id="showallbusbtn" (click)="showallbuses()">Show All Bus </button>
+        <button id="showallroutesbtn" (click)="showroutes()">Show Routes </button>
     </div>
 </div>
 
-<div *ngIf="isShown"  class="main">
+<div class="wholemain">
+<div   class="main">
     <form (ngSubmit)="addbus()">
         <label>Enter Bus Number</label><br />
         <input type="number" name="busnumber" [(ngModel)]=bus.busNumber/><br/>
@@ -23,9 +23,9 @@
         <button type="submit">Add Bus</button>
     </form>
 </div>
-<h3>{{messagebus}}</h3>
+<!-- <h3 >{{messagebus}}</h3> -->
 
-<div *ngIf="isShown1"  class="route">
+<div class="route">
     <form (ngSubmit)="addroute()">
         <label>Enter Bus Number</label><br/>
         <input type="number" name="busnumber" [(ngModel)]=route.bus.busNumber /><br/>
@@ -40,11 +40,11 @@
         <button type="submit">Add Route</button>
     </form>
 </div>
-
+ 
 <h3>{{messageroute}}</h3>
 
 
- <div *ngIf="isShown2" class="sch">
+ <div class="sch">
     <form (ngSubmit)="addschedule()">
         <label>Enter Bus Number</label><br/>
         <input type="number" name="busnumber" [(ngModel)]=schedule.bus.busNumber /><br/>
@@ -63,7 +63,7 @@
 <h3>{{messageschedule}}</h3>
 
 
-  <div *ngIf="isShown4">
+  <div class="seat">
     <form (ngSubmit)="addseat()">
         <label>Enter bus Number</label><br />
         <input type="number" name="busnumber" [(ngModel)]=busSeatStatus.busSeat.bus.busNumber /><br />
@@ -77,15 +77,10 @@
 
 <h3>{{messageseat}}</h3>
 
-<div *ngIf="isShown3">
-
-    <div *ngFor="let b of busdetail">
-        {{b[0]}}<br/>
-        {{b[1]}}<br/>
-        {{b[2]}}<br/>
-        {{b[3]}}<br/>
-        {{b[4]}}<br/>
-    </div>
 </div>
+
+
+
+
 
 

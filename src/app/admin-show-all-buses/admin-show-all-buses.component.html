@@ -1,0 +1,22 @@
+<div class="busdetail"> 
+    <table border="1">
+        <tr>
+        <th>BusName</th>
+        <th>busNumber</th>
+        <th>bus type</th>
+        <th>source</th>
+        <th>destination</th>
+        </tr> 
+    </table>
+    <div *ngFor="let d of busdata">
+        <table border="1">
+        <tr>
+            <td>{{d[0]}}</td>
+            <td>{{d[1]}}</td>
+            <td>{{d[2]}}</td>
+            <td>{{d[3]}}</td>
+            <td>{{d[4]}}</td>
+        </tr>
+    </table>
+    </div>
+</div>

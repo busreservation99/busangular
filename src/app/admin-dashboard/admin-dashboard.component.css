@@ -1,0 +1,40 @@
+.money{
+    text-align: center;
+    border: 1px solid black;
+    width: 150px;
+    border-radius: 10px;
+    border-color: whitesmoke;
+    background-color: whitesmoke;
+    color: black
+}
+p{
+    font-size: 3em;
+    color: black
+}
+.customercount{
+    text-align: center;
+    border: 1px solid black;
+    width: 150px;
+    border-radius: 10px;
+    border-color: whitesmoke;
+    background-color: whitesmoke;
+    color: black;
+    position: absolute;
+    right: 60em;
+    position: absolute;
+    top: 16.2em;
+    height: 134px;
+    left: 24em;
+}
+img{
+    height: 56px;
+}
+#customer{
+color: black;
+ position: absolute;
+ left: 14em;
+ top: 7.2em;
+}
+#revenue{
+    color: black;
+}
