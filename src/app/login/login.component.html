@@ -1,71 +1,66 @@
 <div [class]="hello" id="container">
-         <div class="form-container sign-up-container">
-             <form (ngSubmit)="addCustomer()">
-                 <h1>Create Account</h1>    
-                 <br>
-                 <input type="text" placeholder="Name" />
-                 <input type="email" placeholder="Email" />
-                 <input type="password" placeholder="Password" />
-                
-                 <button>Sign Up</button>
-                 <input type="text" name="firstname" required #firstname="ngModel" [(ngModel)]=registration.firstName placeholder="First Name"><br>
-                <div *ngIf="firstname.invalid && (firstname.dirty ||firstname.touched)" class="alert alert-danger"> 
-                    <div *ngIf="firstname.errors.required" style="color:red">First Name is required</div>
-                </div>
-                <input type="text" name="lastname" required #lastname="ngModel" [(ngModel)]=registration.lastName placeholder="Last Name"><br>
-                <div *ngIf="lastname.invalid && (lastname.dirty ||lastname.touched)" class="alert alert-danger"> 
-                    <div *ngIf="lastname.errors.required" style="color:red">Last Name is required</div>
-                </div>
-                <input type="number" name="contact" required #contact="ngModel" pattern="^[1-9][0-9]{9}$" [(ngModel)]=registration.contact placeholder="Contact"><br>
-                <div *ngIf="contact.invalid && (contact.dirty ||contact.touched)" class="alert alert-danger"> 
-                    <div *ngIf="contact.errors.required" style="color:red">Contact is required</div>
-                </div>
-                <select name="gender" id="gender"  [(ngModel)]=registration.gender  placeholder="Gender">
-                    <option value="male" name="gender">Male</option>
-                    <option value="female" name="gender">Female</option>
-                    <option value="other" name="gender">Other</option>
-                </select>
-                <input type="text" name="comment"  [(ngModel)]=registration.address placeholder="Address"/>
-                <input placeholder = "Date of Birth" name="dob" class = "textbox-n" type = "text" onfocus = "(this.type = 'date')"  id = "date"  [(ngModel)]=registration.dateOfBirth>
-                <input type="email" name="email" required pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$" #email="ngModel" [(ngModel)]=registration.email placeholder="Email"><br />
-                <div *ngIf="email.invalid && (email.dirty ||email.touched)" class="alert alert-danger">
-                    <div *ngIf="email.errors.pattern" style="color:red">Email should be of type john@..</div>
-                </div>
-                <input type="password" name="password" required #password="ngModel" pattern="^[1-9][0-9]{4}$" [(ngModel)]=registration.password placeholder="Password"><br />
-                <div *ngIf="password.invalid && (password.dirty ||password.touched)" class="alert alert-danger">
-                    <div *ngIf="password.errors.pattern" style="color:red">Password should be of 5 digits </div>
-                </div> 
-                    <button>Sign Up</button>
-             </form>
-         </div>
-         <div class="form-container sign-in-container">
-             <form action="#">
-                 <h1>Sign in</h1>
-               <br>
-                <input type="email" name="email" #email="ngModel" [(ngModel)]=login.email required placeholder="Email" />
-                <div *ngIf="email.invalid && (email.dirty ||email.touched)" class="alert alert-danger"> 
-                    <div *ngIf="email.errors.required" style="color:red">Email is required</div>
-                </div>
-                <input type="password" name="password" #password="ngModel" required  pattern="^[1-9][0-9]{4}$" [(ngModel)]=login.password  placeholder="Password" />
-                <div *ngIf="password.invalid && (password.dirty ||password.touched)" class="alert alert-danger">
-                    <div *ngIf="password.errors.required" style="color:red">Password should be of 5 digits </div>
-                </div><br/>
-                <button (click)="loginCheck()">Sign In</button>
-             </form>
-         </div>
-         <div class="overlay-container">
-             <div class="overlay">
-                 <div class="overlay-panel overlay-left">
-                     <h1>Welcome Back!</h1>
-                     <p>To keep connected with us please login with your personal info</p>
-                     <button class="ghost" id="signIn" (click)="signInButton() ">Sign In</button>
-                 </div>
-                 <div class="overlay-panel overlay-right">
-                     <h1>Hello, Fernweh!</h1>
-                     <p>Enter your personal details and start journey with us</p>
-                     <button class="ghost" id="signUp" (click)="signUpButton()">Sign Up</button>
-                 </div>
-             </div>
-         </div>
-     </div>
-   
+    <div class="form-container sign-up-container">
+        <form (ngSubmit)="addCustomer()">
+            <h1 style="margin-bottom: 10px">Create Account</h1>    
+            <br><br>
+            <input type="text" name="firstname" required #firstname="ngModel" [(ngModel)]=registration.firstName placeholder="First Name"><br>
+           <div *ngIf="firstname.invalid && (firstname.dirty ||firstname.touched)" class="alert alert-danger"> 
+               <div *ngIf="firstname.errors.required" style="color:red">First Name is required</div>
+           </div>
+           <input type="text" name="lastname" required #lastname="ngModel" [(ngModel)]=registration.lastName placeholder="Last Name"><br>
+           <div *ngIf="lastname.invalid && (lastname.dirty ||lastname.touched)" class="alert alert-danger"> 
+               <div *ngIf="lastname.errors.required" style="color:red">Last Name is required</div>
+           </div>
+           <input type="number" name="contact" required #contact="ngModel" pattern="^[1-9][0-9]{9}$" [(ngModel)]=registration.contact placeholder="Contact"><br>
+           <div *ngIf="contact.invalid && (contact.dirty ||contact.touched)" class="alert alert-danger"> 
+               <div *ngIf="contact.errors.required" style="color:red">Contact is required</div>
+           </div>
+           <select name="gender" id="gender"  [(ngModel)]=registration.gender  placeholder="Gender">
+               <option value="male" name="gender">Male</option>
+               <option value="female" name="gender">Female</option>
+               <option value="other" name="gender">Other</option>
+           </select>
+           <input type="text" name="comment"  [(ngModel)]=registration.address placeholder="Address"/>
+           <input placeholder = "Date of Birth" name="dob" class = "textbox-n" type = "text" onfocus = "(this.type = 'date')"  id = "date"  [(ngModel)]=registration.dateOfBirth>
+           <input type="email" name="email" required pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$" #email="ngModel" [(ngModel)]=registration.email placeholder="Email"><br />
+           <div *ngIf="email.invalid && (email.dirty ||email.touched)" class="alert alert-danger">
+               <div *ngIf="email.errors.pattern" style="color:red">Email should be of type john@..</div>
+           </div>
+           <input type="password" name="password" required #password="ngModel" pattern="^[1-9][0-9]{4}$" [(ngModel)]=registration.password placeholder="Password"><br />
+           <div *ngIf="password.invalid && (password.dirty ||password.touched)" class="alert alert-danger">
+               <div *ngIf="password.errors.pattern" style="color:red">Password should be of 5 digits </div>
+           </div> 
+               <button style="margin-top: 20px">Sign Up</button>
+        </form>
+    </div>
+    <div class="form-container sign-in-container">
+        <form action="#">
+            <h1>Sign in</h1>
+          <br>
+           <input type="email" name="email" #email="ngModel" [(ngModel)]=login.email required placeholder="Email" />
+           <div *ngIf="email.invalid && (email.dirty ||email.touched)" class="alert alert-danger"> 
+               <div *ngIf="email.errors.required" style="color:red">Email is required</div>
+           </div>
+           <input type="password" name="password" #password="ngModel" required  pattern="^[1-9][0-9]{4}$" [(ngModel)]=login.password  placeholder="Password" />
+           <div *ngIf="password.invalid && (password.dirty ||password.touched)" class="alert alert-danger">
+               <div *ngIf="password.errors.required" style="color:red">Password should be of 5 digits </div>
+           </div><br/>
+           <button (click)="loginCheck()">Sign In</button>
+        </form>
+    </div>
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-left">
+                <h1>Welcome Back!</h1>
+                <p>To keep connected with us please login with your personal info</p>
+                <button class="ghost" id="signIn" (click)="signInButton() ">Sign In</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+                <h1>Hello, Fernweh!</h1>
+                <p>Enter your personal details and start journey with us</p>
+                <button class="ghost" id="signUp" (click)="signUpButton()">Sign Up</button>
+            </div>
+        </div>
+    </div>
+</div>
+
