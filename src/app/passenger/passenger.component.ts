@@ -78,6 +78,7 @@ remove(element){
   });
 }
 addAllPassengers(){
+  sessionStorage.setItem('passengers',JSON.stringify(this.passengers));
   this.service.savePassenger(this.passengers).subscribe(data =>{
     alert(JSON.stringify(data));
     console.log(data);

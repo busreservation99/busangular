@@ -10,14 +10,14 @@
     </form>
 </div>
 
-<div class="display" *ngIf="data">
+<!-- <div class="display" *ngIf="data">
     <label>Bus Name:</label>
     <label>Bus Number:</label>
     <label>Bus Type:</label>
     <label>Fare: </label>    
     <label>DepartureTime:</label>
     <label>ArrivalTime:</label>
-    </div>
+    </div> -->
 
 <!-- <div *ngFor="let d of data">
     <br />
@@ -35,8 +35,10 @@
       <br><button (click)="logMessageId(messageEl)">Console Log </button>
     </li>
   </ul> -->
-  <div *ngFor="let d of data">
+  
+  
   <div class="container">
+    <div *ngFor="let d of data">
     <div class="course">
         <div class="preview">
             <h6>{{d[2]}}</h6>
@@ -56,6 +58,7 @@
         </div>
     </div>
     <br>
+    
 </div>
 
   </div>
