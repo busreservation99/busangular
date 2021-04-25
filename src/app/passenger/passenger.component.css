@@ -1,13 +1,23 @@
 label{
-    padding: 7px;
+    padding: 10px;
 }
 input{
     border-radius: 5px;
 }
 button{
     border-radius: 5px;
-    margin-left: 180px;
+    color: white;
     background-color: blue;
-    float: right;
-    margin-right: 300px;
+    
+   
+ }
+ table, th, td {
+
+    border: 1px solid black;
+    width: 80%;
+    text-align: center;
+    border-collapse: collapse;
+    
+    padding: 8px;
+    table-layout: fixed;
  }
