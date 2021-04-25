@@ -17,7 +17,8 @@ body {
 
 h1 {
 	font-weight: bold;
-	margin: 0;
+	position: relative;
+	top: 10px;
 }
 
 h2 {
@@ -54,6 +55,9 @@ button {
 	letter-spacing: 1px;
 	text-transform: uppercase;
 	transition: transform 80ms ease-in;
+	position: relative;
+	top: 5px;
+	margin-bottom: 20px;
 }
 
 button:active {
@@ -78,6 +82,9 @@ form {
 	padding: 0 50px;
 	height: 100%;
 	text-align: center;
+	overflow-x: hidden;
+	overflow-y: auto;
+	
 }
 
 input {
