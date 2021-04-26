@@ -1,3 +1,5 @@
+import { PaymentConfirmationComponent } from './payment-confirmation/payment-confirmation.component';
+import { PaymentComponent } from './payment/payment.component';
 import { SeatsComponent } from './seats/seats.component';
 import { SearchResultComponent } from './search-result/search-result.component';
 import { NgModule } from '@angular/core';
@@ -31,7 +33,10 @@ const routes: Routes = [
   {path:'seats', component:SeatsComponent},
   {path:'admin-analytics',component:AdminDashboardComponent},
   {path:'admin-show-buses',component:AdminShowAllBusesComponent},
-  {path:'admin-routes',component:ShowRoutesComponent}
+  {path:'admin-routes',component:ShowRoutesComponent},
+  {path:'payment',component:PaymentComponent},
+  {path:'payment-confirmation',component:PaymentConfirmationComponent}
+  
 ];
 
 @NgModule({

@@ -1,0 +1,11 @@
+<form (ngSubmit) = "getPayments()">
+
+Select PaymentMode : <input type="radio" id="card" name="PaymentMode" value="card" [(ngModel)]=payments.paymentMode>
+<label for="card">Credit Card</label>
+<input type="radio" id="cash" name="paymentMode" value="cash" [(ngModel)]=payments.paymentMode>
+<label for="cash">Debit card</label><br/>
+     Enter the Amount : <input type = "number" name = "amount" [(ngModel)] = payments.amount ><br/>
+     Enter the register Id: <input type = "number" name = "registerId" [(ngModel)] = payments.registration.id><br/>
+    <button type = "submit">submit</button>
+    </form>
+    

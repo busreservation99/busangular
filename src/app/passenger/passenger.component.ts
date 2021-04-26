@@ -44,8 +44,8 @@ export class PassengerComponent{
    }*/
 
   addPassenger(){
-    this.passenger.seatId.seatId=113;
-    this.passenger.booking.id=201;
+    this.passenger.seatId.seatId=557;
+    this.passenger.booking.id=231;
     this.passengers.passengers.push(this.passenger);
     this.passenger=new Passenger();
     console.log(this.passengers.passengers)
@@ -60,6 +60,7 @@ addAllPassengers(){
     console.log(data);
     this.message=data['message'];
     this.passengers.passengers=[];
+    this.router.navigate(['payment']);
    })
 }
   remove(element){
