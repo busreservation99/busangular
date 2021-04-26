@@ -15,53 +15,64 @@ export class PassengerComponent{
   message:string;
   display:boolean=true;
   passenger:Passenger = new Passenger();
-  //passengers:Passengers= new Passengers();
+  passengers:Passengers= new Passengers();
   //passengers: Array<Passenger> = new Array();
 
-  userForm:FormGroup;
-  passengers:any;
+  //userForm:FormGroup;
+ // passengers:any;
   
   
   constructor(private fb:FormBuilder,private service:PassengerService, private router: Router){
-    this.passengers=[];
+    /*this.passengers=[];
     
-    this.userForm = this.fb.group({
+    //this.userForm = this.fb.group({
       name: ['',Validators.required],
       phoneNumber: ['',Validators.required],
       email:['',Validators.required]
-    })
+    })*/
   }
-  // addPassenger(){
-  //   this.passenger.busSeat.seatId=263;
-  //   this.passenger.booking.id=230;
-  //   this.passengers.passengers.push(this.passenger);
-  //  this.service.savePassenger(this.passengers).subscribe(data =>{
-  //   alert(JSON.stringify(data));
-  //   console.log(data);
-  //   this.message=data['message'];
-  //   this.passengers.passengers=[];
-  //  })
-  // }
-
   /*addPassenger(){
-    this.passenger.busSeat.seatId=110;
-    this.passenger.booking.id=65;
+    this.passenger.busSeat.seatId=113;
+    this.passenger.booking.id=201;
+    this.passengers.passengers.push(this.passenger);
+    this.service.savePassenger(this.passengers).subscribe(data =>{
+    alert(JSON.stringify(data));
+    console.log(data);
+    this.message=data['message'];
+    this.passengers.passengers=[];
+    })
+   }*/
+
+  addPassenger(){
+    this.passenger.seatId.seatId=113;
+    this.passenger.booking.id=201;
     this.passengers.passengers.push(this.passenger);
     this.passenger=new Passenger();
+    console.log(this.passengers.passengers)
   }
   
 addAllPassengers(){
 
     // this.passengers.passengers.push(this.passenger);
+    sessionStorage.setItem('passengers',JSON.stringify(this.passengers.passengers));
      this.service.savePassenger(this.passengers).subscribe(data =>{
     alert(JSON.stringify(data));
     console.log(data);
     this.message=data['message'];
     this.passengers.passengers=[];
    })
-}*/
-
-public add() {
+}
+  remove(element){
+    console.log(this.passengers.passengers)
+    this.passengers.passengers.forEach((value,index) => {
+    if(value == element){
+      this.passengers.passengers.splice(index,1);
+    }
+  });
+  console.log(this.passengers.passengers)
+}
+}
+/*public add() {
   this.passenger.busSeat.seatId=110;
   this.passenger.booking.id=65;
   this.passengers.push(this.userForm.value);
@@ -96,7 +107,7 @@ addAllPassengers(){
    })
 }
 
-}
+}*/
 
 
 

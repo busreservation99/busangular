@@ -7,5 +7,5 @@ export class Passenger{
     phoneNumber:number;
     email:String;
     booking:Booking=new Booking();
-    busSeat:BusSeat=new BusSeat();
+    seatId:BusSeat=new BusSeat();
 } 
