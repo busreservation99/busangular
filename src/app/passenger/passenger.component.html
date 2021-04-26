@@ -1,34 +1,46 @@
-<!-- <div>
+ <div>
     <form (ngSubmit)="addPassenger()" >
         <div class="passengers">
             <label>Enter Name: </label>
-            <input type="text" name="name" [(ngModel)]=passenger.name /><br />
+            <input type="text" name="name" required #name="ngModel" [(ngModel)]=passenger.name />
+            <div *ngIf="name.invalid && (name.dirty ||name.touched)" class="alert alert-danger">
+                <div *ngIf="name.errors.pattern" style="color:red">Name cannot be blank</div>
+            </div>
             <label>Enter Phone Number:</label>
-            <input type="number" name="phone" [(ngModel)]=passenger.phoneNumber /><br />
+            <input type="number" name="phone" required #phone="ngModel" [(ngModel)]=passenger.phoneNumber />
+            <div *ngIf="phone.invalid && (phone.dirty ||phone.touched)" class="alert alert-danger">
+                <div *ngIf="phone.errors.pattern" style="color:red">Enter Unique Phone Number</div>
+            </div>
             <label>Enter Email:</label>
-            <input type="email" name="email"  [(ngModel)]=passenger.email />
+            <input type="email" name="email" required #email="ngModel" [(ngModel)]=passenger.email />
+            <div *ngIf="email.invalid && (email.dirty ||email.touched)" class="alert alert-danger">
+                <div *ngIf="email.errors.pattern" style="color:red">Email should be of type john@..</div>
+            </div>
             <button type="submit">Add Passenger </button>
         </div>
     </form>
 </div>
 <button (click)="addAllPassengers()">Add Passengers </button>
-<div class="display" *ngIf="true">
-    <label>Name</label>
-    <label>Email</label>
-    <label>Phone Number</label>
+<div class="display" *ngIf="passengers">
+    <table border="1">
+       <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+        <th>Remove Passenger</th>
+    </tr> 
+    </table>
 </div>
-<table>
-    <tr>
-        <div *ngFor="let p of passengers.passengers, let i = index">
-            <td style="padding: 20px">{{p.name}}</td>
-            <td style="padding: 20px">{{p.email}} </td>
-            <td style="padding: 20px">{{p.phoneNumber}}</td>
+<div *ngFor="let p of passengers">
+        <table border="1">
+        <tr>
+            <td>{{p.name}}</td>
+            <td>{{p.email}}</td>
+            <td>{{p.phoneNumber}}</td>
             <td><button (click)="remove(p)">Remove</button></td>
-        </div>
-    </tr>
-</table>
-
-<h4>{{message}}</h4> -->
+        </tr>
+    </table>
+<h4>{{message}}</h4>
 
 
 <!-- <div>
@@ -50,7 +62,7 @@
     <label>Name</label>
     <label>Email</label>
     <label>Phone Number</label>
-</div> -->
+</div> 
 <table>
     <tr>
         <div *ngFor="let p of passengers">
@@ -61,7 +73,7 @@
         </div>
     </tr>
 </table>
--->
+
 <form [formGroup]="userForm">
     <div class="passengers">
         <label>Enter Name: </label>
@@ -99,4 +111,4 @@
     </table>
     </div>
     <button (click)="addAllPassengers()">Add Passengers </button>
-    <h4>{{message}}</h4>
+    <h4>{{message}}</h4>-->

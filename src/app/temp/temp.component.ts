@@ -9,6 +9,10 @@ export class TempComponent implements OnInit {
   
   constructor() {
     let ar:number[]=[1,2,3,4,5];
+      console.log(this.myArray);  
+       
+      
+      
     
    }
  
@@ -43,6 +47,10 @@ export class TempComponent implements OnInit {
     console.log("Message Id: ", messageId);
 
   }
- 
+    myString = 'Hardik,Paresh,Vimal,Harshad,Kiran';
+  
+    myArray = this.myString.split(',');
 
 }
+
+
