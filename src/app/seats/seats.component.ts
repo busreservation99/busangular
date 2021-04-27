@@ -75,7 +75,7 @@ populateMyHobbies(value , status:boolean)
     }
 //     console.log(this.selectedHobbies);
 }
-faltufn(){
+showPrice(){
       console.log(this.seatsBooked);
       this.totalPrice=this.seatsBooked.length*this.price;
       this.totalSeatsBooked=this.seatsBooked.length;
@@ -86,19 +86,20 @@ faltufn(){
 
 confirmBooking(){
   this.router.navigate(['passenger']);
-  console.log(this.seatsBooked.toString())
-  sessionStorage.setItem('seatsBooked',JSON.stringify(this.seatsBooked.toString()));
+  // console.log(this.seatsBooked.toString());
+  sessionStorage.setItem('seatsBooked',JSON.stringify(this.seatsBooked));
   sessionStorage.setItem('totalSeats',JSON.stringify(this.seatsBooked.length));
-  this.seatsBooked.forEach(element => {
-    this.updateSeats.UpdateSeats(element).subscribe(data =>{
 
-      this.bookedSeatId.push(data[0].seatId);
+  // this.seatsBooked.forEach(element => {
+  //   this.updateSeats.UpdateSeats(element).subscribe(data =>{
+
+  //     this.bookedSeatId.push(data[0].seatId);
       
-       sessionStorage.setItem('seatId',this.bookedSeatId.toString());
-      alert(JSON.stringify(data));
-      console.log(data);
-     });
-  });
+  //      sessionStorage.setItem('seatId',this.bookedSeatId.toString());
+  //     alert(JSON.stringify(data));
+  //     console.log(data);
+  //    });
+  // });
   
 }
 }
