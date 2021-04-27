@@ -10,10 +10,15 @@ import { PaymentService } from '../payment.service';
   styleUrls: ['./payment.component.css']
 })
 export class PaymentComponent  {
-
+  amount;
   payments: Payment = new Payment();
+  seats;
 
-  constructor(private paymentservice: PaymentService, private router: Router, private service:FinalBookingService) { }
+  constructor(private paymentservice: PaymentService, private router: Router, private service:FinalBookingService) { 
+this.amount=sessionStorage.getItem('totalPrice');
+this.seats=sessionStorage.getItem('totalSeats');
+this.payments.amount=this.amount;
+  }
 
 getPayments(){
   alert(JSON.stringify(this.payments));

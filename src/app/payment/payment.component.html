@@ -1,32 +1,20 @@
-<form (ngSubmit) = "getPayments()">
+    <form (ngSubmit) = "getPayments()">
 
-Select PaymentMode : <input type="radio" id="card" name="PaymentMode" value="card" [(ngModel)]=payments.paymentMode>
-<label for="card">Credit Card</label>
-<input type="radio" id="cash" name="paymentMode" value="cash" [(ngModel)]=payments.paymentMode>
-<label for="cash">Debit card</label><br/>
-     Enter the Amount : <input type = "number" name = "amount" [(ngModel)] = payments.amount ><br/>
-     Enter the register Id: <input type = "number" name = "registerId" [(ngModel)] = payments.registration.id><br/>
-    <button type = "submit">submit</button>
-    </form>
-    
     <div class="container">
      <div class="mGrid">
        <div class="total">
          <p>total</p>
-         <p>&#8377;4000</p>
+         <p>&#8377;{{amount}}</p>
        </div>
        <div class="detail">
          <p>detail</p>
          <ul>
            <li>Seats Booked</li>
-           <li>4</li>
+           <li>{{seats}}</li>
          </ul>
-         <ul>
-           <li>Tax </li>
-           <li>400</li>
-         </ul>
+        
        </div>
-       <button>pay now</button>
+       <button type = "submit">pay now</button>
      </div>
      <!-- Small Side Card detail-->
      <div class="subContainer">
@@ -48,8 +36,9 @@ Select PaymentMode : <input type="radio" id="card" name="PaymentMode" value="car
          <p class="datepara"><input type="month"></p>
        </div>
        <div class="ccv">
-        <input type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="cvv" id="tel">
+        <input type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="cvv" id="tel" name = "registerId" [(ngModel)] = payments.registration.id>
        </div>
      </div>
    </div>
    <div class="backlayer"></div>
+   </form>
