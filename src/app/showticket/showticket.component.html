@@ -9,14 +9,14 @@
 </form>
 </div>
 <h4>{{message}}</h4> -->
-<div>
+<div *ngFor="let s of seatsBooked">
 <div id='ticket'>
     <div class='back'>
       <div class='left'>
         <div class="left-bar">
           <span class='time' data-title='boarding'>{{departureTime}}</span>
-          <span class='gate' data-title='gate'></span>
-          <span class='seat' data-title='seat'>518</span>
+          
+          <span class='seat' data-title='seat'>{{s}}</span>
         </div>
         <div class='details-section'>
     
@@ -25,7 +25,7 @@
               <span class="name" data-title='Bus name'>{{busName}}</span>
               <div class='flight-details'>
                 <span class='flightno' data-title='Bus Number'>{{busNumber}}</span>
-                <span class='date' data-title='time' :data-date='travelDate'>4Hr</span>
+              
               </div>
     
               <div class='from-to'>
@@ -67,7 +67,7 @@
                 <div class="bottom-bar">
                     <span class='time' data-title='boarding'>{{departureTime}}</span>
          
-          <span class='seat' data-title='seat'>567</span>
+          <span class='seat' data-title='seat'>{{s}}</span>
                 </div>
       </div>
     </div>
@@ -78,5 +78,7 @@
        Transporto
         </div>
     </div>
+    <br><br>
     </div>
+    <br>
     

@@ -44,7 +44,9 @@ body {
 }
 
 #ticket {
-  position: fixed;
+ 
+  margin-bottom: 10px;;
+  position: relative;
   top: 15vmin;
   left: 50%;
   width: 80vmin;

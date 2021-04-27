@@ -17,7 +17,7 @@ export class ShowticketComponent  implements OnInit {
   source;
   destination;
   busName;
-
+  seatsBooked:[];
 
 
   constructor() { this.myData='My data is coming';
@@ -34,7 +34,8 @@ export class ShowticketComponent  implements OnInit {
     this.source = JSON.parse(sessionStorage.getItem('source').toString());
     this.destination = JSON.parse(sessionStorage.getItem('destination').toString());
     this.busName=sessionStorage.getItem('busName');
-    
+    this.seatsBooked=JSON.parse(sessionStorage.getItem('seatsBooked'));
+    console.log(this.seatsBooked);
   }
   message:string;
   ticketId:number;
