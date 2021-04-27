@@ -1,4 +1,4 @@
-<div class="search-ticket">
+<!-- <div class="search-ticket">
     <form (ngSubmit)="searchTicket()"id="showticketform">
         <div class="show-ticket">
             <h4 style="text-align: center">Search Ticket</h4>
@@ -8,4 +8,75 @@
         </div>
 </form>
 </div>
-<h4>{{message}}</h4>
+<h4>{{message}}</h4> -->
+<div>
+<div id='ticket'>
+    <div class='back'>
+      <div class='left'>
+        <div class="left-bar">
+          <span class='time' data-title='boarding'>{{departureTime}}</span>
+          <span class='gate' data-title='gate'></span>
+          <span class='seat' data-title='seat'>518</span>
+        </div>
+        <div class='details-section'>
+    
+          <div class='details-body'>
+            <div class='details-travel'>
+              <span class="name" data-title='Bus name'>{{busName}}</span>
+              <div class='flight-details'>
+                <span class='flightno' data-title='Bus Number'>{{busNumber}}</span>
+                <span class='date' data-title='time' :data-date='travelDate'>4Hr</span>
+              </div>
+    
+              <div class='from-to'>
+                <div class="from"  data-title='Departure'>{{source}}</div>
+                <span class="line"></span>
+                <div class="to" data-title='arrival'>{{destination}}</div>
+              </div>
+            </div>
+    
+            <div class='qrcode'>
+              <qrcode [qrdata]="myData" [width]="80" [errorCorrectionLevel]="'M'"[elementType]="'svg'"></qrcode>
+            </div>
+          </div>
+          <div class='details-logo'>
+                <div v-html='logo' class='logo'></div> 
+            <div class="logo-text">Transporto</div>
+                    
+          </div>
+        </div>
+      </div>
+      <div class='right'>
+             <div class='details-logo'>
+            <span v-html='logo' class='logo'></span> <span class='logo-text'>Transporto</span>
+          </div>
+                <div class="travel-details">
+                    <span class="name" data-title='name'>{{busName}}</span>
+                    <div class="flight">
+                        <span class='flight-number' data-title='Bus Number'>{{busNumber}}</span>
+                        
+                    </div>
+                 <div class='from-to'>
+                <span class="from"  data-title='Departure'>{{source}}</span>
+                <span class="to"  data-title='arrival'>{{destination}}</span>
+              </div>
+            <div class='ticket-id'>
+                </div>
+                </div>
+                
+                <div class="bottom-bar">
+                    <span class='time' data-title='boarding'>{{departureTime}}</span>
+         
+          <span class='seat' data-title='seat'>567</span>
+                </div>
+      </div>
+    </div>
+    
+    <div class='front'>
+        <div v-html='logo' class='logo'></div> 
+        <div class='text'>
+       Transporto
+        </div>
+    </div>
+    </div>
+    

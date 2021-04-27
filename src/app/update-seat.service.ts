@@ -14,8 +14,8 @@ export class UpdateSeatService implements OnInit {
   }
 
   UpdateSeats(seatN:number) : Observable <object>{
-    this.seatIds=sessionStorage.getItem('seatsBooked');
-    console.log(this.seatIds);
+    // this.seatIds=sessionStorage.getItem('seatsBooked');
+    // console.log(this.seatIds);
     let url = "http://localhost:8181/updateSeats?seatId="+seatN;
     return this.http.post(url,null);
   }

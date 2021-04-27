@@ -1,3 +1,6 @@
+
+import { PaymentConfirmationComponent } from './payment-confirmation/payment-confirmation.component';
+import { PaymentComponent } from './payment/payment.component';
 import { SeatsComponent } from './seats/seats.component';
 import { SearchResultComponent } from './search-result/search-result.component';
 import { NgModule } from '@angular/core';
@@ -16,8 +19,7 @@ import { ShowticketComponent } from './showticket/showticket.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { AdminShowAllBusesComponent } from './admin-show-all-buses/admin-show-all-buses.component';
 import { ShowRoutesComponent } from './show-routes/show-routes.component';
-import { AdminLoginComponent } from './admin-login/admin-login.component';
-import { AdminScheduleComponent } from './admin-schedule/admin-schedule.component';
+import { QrcodeComponent } from './qrcode/qrcode.component';
 
 const routes: Routes = [
   {path: '',component:HomeComponent},
@@ -34,8 +36,9 @@ const routes: Routes = [
   {path:'admin-analytics',component:AdminDashboardComponent},
   {path:'admin-show-buses',component:AdminShowAllBusesComponent},
   {path:'admin-routes',component:ShowRoutesComponent},
-  {path:'admin-login',component:AdminLoginComponent},
-  {path:'admin-schedule',component:AdminScheduleComponent}
+  {path:'payment',component:PaymentComponent},
+  {path:'payment-confirmation',component:PaymentConfirmationComponent},
+  {path:'team', component:QrcodeComponent},
 ];
 
 @NgModule({

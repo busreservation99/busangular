@@ -1,4 +1,4 @@
-<div class="frm"> 
+<!-- <div class="frm"> 
     <form (ngSubmit)="fetchBus()">
         <label>From</label>
         <input type="text" name="from" [(ngModel)]=searchBus.source />
@@ -8,7 +8,7 @@
         <input type="date" name="date" [(ngModel)]=searchBus.date/>
         <button type="submit">Search Bus</button>
     </form>
-</div>
+</div> -->
 
 <!-- <div class="display" *ngIf="data">
     <label>Bus Name:</label>
@@ -35,7 +35,24 @@
       <br><button (click)="logMessageId(messageEl)">Console Log </button>
     </li>
   </ul> -->
-  
+  <div>
+    <form (ngSubmit)="fetchBus()">
+        <div class="row">
+          <span>
+            <input class="slide-up" id="card" type="text" placeholder="Source" name="from" [(ngModel)]=searchBus.source/><label for="card">From</label>
+          </span>
+          <span>
+            <input class="slide-up" id="expires" type="text" name="to" placeholder="Destination" [(ngModel)]=searchBus.destination /><label for="expires">To</label>
+          </span>
+          <span>
+            <input class="slide-up" id="security" type="date" name="date" placeholder="Date"  [(ngModel)]=searchBus.date/><label for="security">Date</label>
+          </span>
+          <span>
+          <button class="slide-up" id="card" type="submit"  >Search Bus</button>
+        </span>
+        </div>
+        </form>
+  </div>
   
   <div class="container">
     <div *ngFor="let d of data">
@@ -47,14 +64,13 @@
         </div>
         <div class="info">
             <div class="progress-wrapper">
-                <div class="progress"></div>
-                <span class="progress-text">4/9 Seats Filled</span>
+                <span class="progress-text"><h3>Fare &#8377;{{d[3]}} </h3></span>
             </div>
-            <h5>Fare {{d[3]}} </h5><br><h3> Mumbai &rarr; Goa</h3><br>
+            <h4>transporto Bus Service &copy;  </h4><br><h3> {{searchBus.source}} &rarr; {{searchBus.destination}}</h3><br>
             <h4>Departure Time:{{d[4]}}</h4><br>
             <h4>Arrival Time:{{d[5]}}</h4>
             
-            <button class="btn" #busId #sid (click)="bookNow(busId,sid)" [attr.busNumber]="d[1]" [attr.schid]="d[6]">Book Now</button>
+            <button class="btn" #busId #sid #departure #arrival #busName (click)="bookNow(busId,sid,departure,arrival,busName)" [attr.busName]="d[0]" [attr.busNumber]="d[1]" [attr.schid]="d[6]" [attr.departure]="d[4]" [attr.arrival]="d[5]">Book Now</button>
         </div>
     </div>
     <br>
@@ -62,3 +78,5 @@
 </div>
 
   </div>
+
+ 

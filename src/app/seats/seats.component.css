@@ -1,0 +1,82 @@
+input[type="checkbox"]{
+    margin: 20px;
+   padding:10px;
+   size: 30px;;
+}
+
+.spacing{
+    margin: 100px;
+}
+
+/* ------------------------------------------------ */
+
+ul{
+    list-style-type: none;
+}
+p{
+    text-align: center;
+    font-size: 40px;
+
+}
+/* -------------------------- */
+.btn{
+    background: #e40046;
+    border: 1px solid transparent;
+    box-shadow: 0px 5px 10px rgb(126, 0, 0);
+    columns: #fff;
+    font-size: 16px;
+    padding: 10px 20px;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: all .4s ease-in-out;
+    font-weight: bold;
+    border-radius: 20px;
+}
+
+.btn:hover{
+    background: #fff;
+    color: #e40046;
+    border: 1px solid #e40046;
+    transform: scale(1.05);
+}
+
+/* ----------------------------- */
+.btn2{
+    background: #e40046;
+    border: 1px solid transparent;
+    box-shadow: 0px 5px 10px rgb(126, 0, 0);
+    columns: #fff;
+    font-size: 16px;
+    padding: 10px 20px;
+    position: relative;
+    top: 73px;
+    left: 500px;;
+    bottom: 30px;
+    right: 30px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: all .4s ease-in-out;
+    font-weight: bold;
+    border-radius: 20px;
+}
+
+.btn2:hover{
+    background: #fff;
+    color: #e40046;
+    border: 1px solid #e40046;
+    transform: scale(1.05);
+    outline: 0;
+    border: none;
+}
+/* ------------------------- */
+.datadisp{
+    padding-left: 20px;
+    font-size: 30px;
+    border: 1px solid #e40046;
+    width: 400px;
+    padding-left: 10px;
+    margin-left: 30px;
+}

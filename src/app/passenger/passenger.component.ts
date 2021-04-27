@@ -12,6 +12,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 })
 export class PassengerComponent{
 
+  pass;
   message:string;
   display:boolean=true;
   passenger:Passenger = new Passenger();
@@ -44,8 +45,8 @@ export class PassengerComponent{
    }*/
 
   addPassenger(){
-    this.passenger.seatId.seatId=113;
-    this.passenger.booking.id=201;
+    // this.passenger.seatId.seatId=557;
+     this.passenger.booking.id=231;
     this.passengers.passengers.push(this.passenger);
     this.passenger=new Passenger();
     console.log(this.passengers.passengers)
@@ -54,13 +55,16 @@ export class PassengerComponent{
 addAllPassengers(){
 
     // this.passengers.passengers.push(this.passenger);
-    sessionStorage.setItem('passengers',JSON.stringify(this.passengers.passengers));
-     this.service.savePassenger(this.passengers).subscribe(data =>{
-    alert(JSON.stringify(data));
-    console.log(data);
-    this.message=data['message'];
-    this.passengers.passengers=[];
-   })
+    sessionStorage.setItem('passengers',JSON.stringify(this.passengers));
+  //   this.pass=JSON.parse(sessionStorage.getItem('passengers'));
+  //    this.service.savePassenger(this.pass).subscribe(data =>{
+  //   alert(JSON.stringify(data));
+  //   console.log(data);
+  //   this.message=data['message'];
+  //   this.passengers.passengers=[];
+    
+  //  })
+   this.router.navigate(['payment']);
 }
   remove(element){
     console.log(this.passengers.passengers)

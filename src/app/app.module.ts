@@ -18,8 +18,11 @@ import { TempComponent } from './temp/temp.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { AdminShowAllBusesComponent } from './admin-show-all-buses/admin-show-all-buses.component';
 import { ShowRoutesComponent } from './show-routes/show-routes.component';
-import { AdminLoginComponent } from './admin-login/admin-login.component';
-import { AdminScheduleComponent } from './admin-schedule/admin-schedule.component';
+import { PaymentComponent } from './payment/payment.component';
+import { PaymentConfirmationComponent } from './payment-confirmation/payment-confirmation.component';
+import { QRCodeModule } from 'angularx-qrcode';
+import { QrcodeComponent } from './qrcode/qrcode.component';
+
 
 @NgModule({
   declarations: [
@@ -40,16 +43,17 @@ import { AdminScheduleComponent } from './admin-schedule/admin-schedule.componen
     AdminDashboardComponent,
     AdminShowAllBusesComponent,
     ShowRoutesComponent,
-    AdminLoginComponent,
-    AdminScheduleComponent,
-  
+    PaymentComponent,
+    PaymentConfirmationComponent,
+    QrcodeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    QRCodeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
