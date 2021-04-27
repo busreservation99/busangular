@@ -13,9 +13,11 @@ export class AdminDashboardComponent implements OnInit {
   ngOnInit(): void {
     this.fetchAmount();
     this.fetchCustomerCount();
+    this.fetchTotalBus();
   }
   payment: Object;
   customerCount : Object;
+  totalBus:object;
   
   fetchAmount(){
     this.adminservice.fetchAmount().subscribe(data =>{
@@ -27,6 +29,12 @@ export class AdminDashboardComponent implements OnInit {
   fetchCustomerCount(){
     this.adminservice.fetchRegisterCount().subscribe(data1 =>{
       this.customerCount=data1;
+    })
+  }
+
+  fetchTotalBus(){
+    this.adminservice.fetchTotalBus().subscribe(data2 =>{
+      this.totalBus=data2;
     })
   }
 }

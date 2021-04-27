@@ -6,8 +6,9 @@
 </div>
 <br/>
 <div class="container" *ngIf="busData && busdest">
+    Total Available Seats: <p id="seatdata">{{seatdata}}</p>
     <div class="heading">
-        {{busData}}&rarr;{{busdest}}
+        {{busData}}&rarr;{{busdest}} 
     </div>
     <h2>Stops</h2>
     <div *ngFor="let r of routeData">
@@ -16,3 +17,4 @@
         </ul>
       </div>
 </div>
+

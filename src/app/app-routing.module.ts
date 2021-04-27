@@ -16,6 +16,8 @@ import { ShowticketComponent } from './showticket/showticket.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { AdminShowAllBusesComponent } from './admin-show-all-buses/admin-show-all-buses.component';
 import { ShowRoutesComponent } from './show-routes/show-routes.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { AdminScheduleComponent } from './admin-schedule/admin-schedule.component';
 
 const routes: Routes = [
   {path: '',component:HomeComponent},
@@ -31,7 +33,9 @@ const routes: Routes = [
   {path:'seats', component:SeatsComponent},
   {path:'admin-analytics',component:AdminDashboardComponent},
   {path:'admin-show-buses',component:AdminShowAllBusesComponent},
-  {path:'admin-routes',component:ShowRoutesComponent}
+  {path:'admin-routes',component:ShowRoutesComponent},
+  {path:'admin-login',component:AdminLoginComponent},
+  {path:'admin-schedule',component:AdminScheduleComponent}
 ];
 
 @NgModule({

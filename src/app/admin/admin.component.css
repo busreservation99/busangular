@@ -1,7 +1,7 @@
 button{
     margin-top: 9px;
     position: absolute;
-    left: 4.5em;
+    left: 6em;
     background-color: #e40046;
     color: white;
     border-radius: 1px;
@@ -15,13 +15,15 @@ button{
     border: 1px solid black;
     width: 21em;
     position: absolute;
-    top: 17em;
+    top: 10em;
     border-radius: 10px;
     padding: 12px;
     height: 22.5em;
     background-color: whitesmoke;
     border-color: whitesmoke;
     font-size: 15px;
+    overflow: x hidden;
+    overflow-y: auto;
 }
 .route{
     padding: 12px;
@@ -30,11 +32,13 @@ button{
     border: 1px solid black;
     position: absolute;
     left:35em;
-    top: 17em;
+    top: 10em;
     height: 22.5em;
     background-color: whitesmoke;
     border-color: whitesmoke;
     font-size: 15px;
+    overflow: x hidden;
+    overflow-y: auto;
 }
 
 .busdetail{
@@ -54,7 +58,7 @@ input{
 .sch{
     position: absolute;
     left: 61em;
-    top: 17em;
+    top: 10em;
     padding: 12px;
     border-radius: 10px;    
     width: 21em;
@@ -63,11 +67,13 @@ input{
     background-color: whitesmoke;
     border-color: whitesmoke;
     font-size: 15px;
+    overflow: x hidden;
+    overflow-y: auto;
 }
 .seat{
     position: absolute;
     right: 7em;
-    top: 17em;
+    top: 10em;
     padding: 12px;
     border-radius: 10px;    
     width: 21em;
@@ -76,6 +82,8 @@ input{
     background-color: whitesmoke;
     border-color: whitesmoke;
     font-size: 15px;
+    overflow: x hidden;
+    overflow-y: auto;
 }
 #showallbusbtn{
     position: absolute;
@@ -103,12 +111,20 @@ h1{
     position: absolute;
     top: 26px;
     left: 1em;
+    text-decoration: underline;
 }
 .center{
     margin: auto;
     margin-left: 100px;
     margin-right: 100px;
     background-color: blue;
+}
+#showallschedulebtn{
+    position: absolute;
+    left:74em ;
+    top: 10px;
+    height: 3em;
+    width:11em ;
 }
 
 

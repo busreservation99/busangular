@@ -5,8 +5,8 @@
     border-color: whitesmoke;
     background-color: whitesmoke;
     color: black;
-    margin-left: 20px;
-    margin-top: 20px;
+    margin-left: 260px;
+    margin-top: 44px;
 }
 p{
     font-size: 3em;
@@ -19,24 +19,42 @@ p{
     border-color: whitesmoke;
     background-color: whitesmoke;
     color: black;  
-    margin-left: 20em;
-    position: absolute;
-    bottom: 50px;
+    margin-left: 40em;
+    position: relative;
+    bottom: 170px;
 }
 img{
-    height: 55px;
+    height: 49px;
 }
 #customer{
     position: relative;
-    bottom: 170px;
-    left: 12.6em;
+    bottom: 165px;
+    left: 24em;
 }
 #revenue{
     color: black;
     position: relative;
-    top: 42px;
-    left: 39px;
+    top: 61px;
+    left: 280px;
 }
+.totalbus{
+    position: relative;
+    left: 64em;
+    top: 16em;
+    text-align: center;
+    width: 200px;
+    border-radius: 10px;
+    border-color: whitesmoke;
+    background-color: whitesmoke;
+    color: black; 
+    height: 111px;
+}
+#bus{
+    position: relative;
+    top: 230px;
+    left: 39.2em;
+}
+
 
 
 

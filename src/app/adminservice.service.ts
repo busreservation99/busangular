@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { AdminLogin } from './appmodel/AdminLogin';
 import { Amount } from './appmodel/Amount';
 import { Bus } from './appmodel/Bus';
 import { BusDetail } from './appmodel/BusDetails';
@@ -66,6 +67,26 @@ export class AdminserviceService {
 
   fetchBusDestination(busNumber : number){
     let url = "http://localhost:8181/fetchdestination?busNumber="+busNumber;
+    return this.http.get<Bus>(url);
+  }
+
+  fetchSeats(busNumber: number){
+    let url="http://localhost:8181/fetchseats?busNumber="+busNumber;
+    return this.http.get<BusSeat>(url);
+  }
+
+  login(login: AdminLogin) : Observable<any> {
+    let url = "http://localhost:8181/adminlogin";
+   return this.http.post(url, login); 
+  }
+
+  schedule() : Observable<any>{
+    let url = "http://localhost:8181/fetchschedule";
+    return this.http.get<Schedule>(url);
+  }
+
+  fetchTotalBus() : Observable<any>{
+    let url = "http://localhost:8181/fetchtotalbus";
     return this.http.get<Bus>(url);
   }
 

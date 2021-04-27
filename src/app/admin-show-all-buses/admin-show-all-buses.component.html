@@ -1,23 +1,19 @@
-<div class="busdetail"> 
-    <table border="1">
-        <tr>
-        <th>BusName</th>
-        <th>busNumber</th>
-        <th>bus type</th>
-        <th>source</th>
-        <th>destination</th>
-        </tr> 
-    </table>
-    <div *ngFor="let d of busdata">
-        <table border="1">
-        <tr>
-            <td>{{d[0]}}</td>
-            <td>{{d[1]}}</td>
-            <td>{{d[2]}}</td>
-            <td>{{d[3]}}</td>
-            <td>{{d[4]}}</td>
-            <span><button>Delete</button></span>
-        </tr>
-    </table>
-    </div>
-</div>
+
+<div class="container">
+    <ul class="responsive-table">
+      <li class="table-header">
+        <div class="col col-1">Name</div>
+        <div class="col col-2">Number</div>
+        <div class="col col-3">BusType</div>
+        <div class="col col-4">Source</div>
+        <div class="col col-4">Destination</div>
+      </li>
+      <li class="table-row" *ngFor="let s of busdata">
+        <div class="col col-1" >{{s[0]}}</div>
+        <div class="col col-2" >{{s[1]}}</div>
+        <div class="col col-3" >{{s[2]}}</div>
+        <div class="col col-4" >{{s[3]}}</div>
+        <div class="col col-4">{{s[4]}}</div>
+      </li>
+    </ul>
+  </div>

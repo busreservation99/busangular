@@ -54,6 +54,9 @@ busdata:any;
   showroutes(){
     this.router.navigate(['admin-routes']);
   }
+  showschedule(){
+    this.router.navigate(['admin-schedule']);
+  }
 
   addbus(){
     this.adminservice.addbus(this.bus).subscribe(data =>{
@@ -75,7 +78,7 @@ busdata:any;
 
   addseat(){
     this.adminservice.addseats(this.busSeatStatus).subscribe(response =>{
-     alert(JSON.stringify(response))
+    //  alert(JSON.stringify(response))
       //this.messageseat=response['message'];
       alert(JSON.stringify(response['message']))
     })
@@ -87,6 +90,7 @@ busdata:any;
     sessionStorage.setItem('scheduleId',data.scheduleId);
       //this.messageschedule=data['message'];
       alert(JSON.stringify(data['message']))
+      alert(JSON.stringify(data['scheduleId']))
     })
   }
 

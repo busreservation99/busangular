@@ -30,7 +30,7 @@ h1{
 button{
     margin-left: 20px;
     width: 2em;
-    background-color: rgb(67, 67, 201);
+    background-color: #e40046;
     color: white;
     border-radius: 5px;
     width: 7em;
@@ -52,4 +52,14 @@ input{
     border-radius: 8px;
     outline: 0;
     border-color: whitesmoke;
+}
+h1{
+    font-size: large;
+}
+
+#seatdata{
+    position: relative;
+    left: 11em;
+    bottom: 27.5px;
+    font-size: 1em;
 }

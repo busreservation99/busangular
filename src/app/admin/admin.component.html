@@ -4,7 +4,8 @@
     <div>
         <button id="showanalyticsbusbtn" (click)="showanalytics()">Show Analytics</button> 
         <button id="showallbusbtn" (click)="showallbuses()">Show All Bus </button>
-        <button id="showallroutesbtn" (click)="showroutes()">Show Routes </button>
+        <button id="showallroutesbtn" (click)="showroutes()">Show Details </button>
+        <button id="showallschedulebtn" (click)="showschedule()">Show Schedule </button>
     </div>
 </div>
 
@@ -12,15 +13,30 @@
 <div   class="main">
     <form (ngSubmit)="addbus()">
         <label>Enter Bus Number</label><br />
-        <input type="number" name="busnumber" [(ngModel)]=bus.busNumber/><br/>
+        <input type="number" name="busnumber" placeholder="enter bus number" required #busnumber="ngModel" [(ngModel)]=bus.busNumber/><br/>
+        <div *ngIf="busnumber.invalid && (busnumber.dirty ||busnumber.touched)" class="alert alert-danger"> 
+            <div *ngIf="busnumber.errors.required" style="color:red">Bus Number Required</div>
+        </div>
         <label>Enter Bus Type</label><br />
-        <input type="text" name="bustype" [(ngModel)]=bus.busType /><br/>
+        <input type="text" name="bustype" placeholder="enter bus type" required #bustype="ngModel" [(ngModel)]=bus.busType /><br/>
+        <div *ngIf="bustype.invalid && (bustype.dirty ||bustype.touched)" class="alert alert-danger"> 
+            <div *ngIf="bustype.errors.required" style="color:red">Bus Type Required</div>
+        </div>
         <label>Bus Name</label><br />
-        <input type="text" name="busname" [(ngModel)]=bus.busName /><br />
+        <input type="text" name="busname" placeholder="enter bus name" required #busname="ngModel" [(ngModel)]=bus.busName /><br />
+        <div *ngIf="busname.invalid && (busname.dirty ||busname.touched)" class="alert alert-danger"> 
+            <div *ngIf="busname.errors.required" style="color:red">Bus name Required</div>
+        </div>
         <label>Source</label><br />
-        <input type="text" name="source" [(ngModel)]=bus.source /><br />
+        <input type="text" name="source" placeholder="enter  source" required #source="ngModel" [(ngModel)]=bus.source /><br />
+        <div *ngIf="source.invalid && (source.dirty ||source.touched)" class="alert alert-danger"> 
+            <div *ngIf="source.errors.required" style="color:red">Source Required</div>
+        </div>
         <label>Destination</label><br />
-        <input type="text" name="destination" [(ngModel)]=bus.destination /><br />
+        <input type="text" name="destination" placeholder="enter destination" required #dest="ngModel"  [(ngModel)]=bus.destination /><br />
+        <div *ngIf="dest.invalid && (dest.dirty ||dest.touched)" class="alert alert-danger"> 
+            <div *ngIf="dest.errors.required" style="color:red">Destination Required</div>
+        </div>
         <button type="submit">Add Bus</button>
     </form>
 </div>
@@ -29,15 +45,30 @@
 <div class="route">
     <form (ngSubmit)="addroute()">
         <label>Enter Bus Number</label><br/>
-        <input type="number" name="busnumber" [(ngModel)]=route.bus.busNumber /><br/>
+        <input type="number" name="busnumber" placeholder="enter bus number"  required #busnumber1="ngModel" [(ngModel)]=route.bus.busNumber /><br/>
+        <div *ngIf="busnumber1.invalid && (busnumber1.dirty ||busnumber1.touched)" class="alert alert-danger"> 
+            <div *ngIf="busnumber1.errors.required" style="color:red">Bus Number Required</div>
+        </div>
         <label>Enter Route Name</label><br/>
-        <input type="text" name="routename" [(ngModel)]=route.busStopName /><br/>
+        <input type="text" name="routename" placeholder="enter route " required #busroute="ngModel" [(ngModel)]=route.busStopName /><br/>
+        <div *ngIf="busroute.invalid && (busroute.dirty ||busroute.touched)" class="alert alert-danger"> 
+            <div *ngIf="busroute.errors.required" style="color:red">Bus Route Required</div>
+        </div>
         <label>Fare</label><br/>
-        <input type="number" name="fare" [(ngModel)]=route.fare /><br/>
+        <input type="number" name="fare" placeholder="enter fare" required #busfare="ngModel" [(ngModel)]=route.fare /><br/>
+        <div *ngIf="busfare.invalid && (busfare.dirty ||busfare.touched)" class="alert alert-danger"> 
+            <div *ngIf="busfare.errors.required" style="color:red">Bus Fare Required</div>
+        </div>
         <label>Stop Arrival Time</label><br/>
-        <input type="text" name="arrivaltime" [(ngModel)]=route.stopArrivalTime /><br/>
+        <input type="text" name="arrivaltime" placeholder="enter time" required #busarrivaltime="ngModel" [(ngModel)]=route.stopArrivalTime /><br/>
+        <div *ngIf="busarrivaltime.invalid && (busarrivaltime.dirty ||busarrivaltime.touched)" class="alert alert-danger"> 
+            <div *ngIf="busarrivaltime.errors.required" style="color:red">Bus Time Required</div>
+        </div>
         <label>Stop Departure Time</label><br/>
-        <input type="text" name="departuretime" [(ngModel)]=route.stopDepartureTime /><br/>
+        <input type="text" name="departuretime" placeholder="enter time" required #busdeparturetime="ngModel" [(ngModel)]=route.stopDepartureTime /><br/>
+        <div *ngIf="busdeparturetime.invalid && (busdeparturetime.dirty ||busdeparturetime.touched)" class="alert alert-danger"> 
+            <div *ngIf="busdeparturetime.errors.required" style="color:red">Bus Time Required</div>
+        </div>
         <button type="submit">Add Route</button>
     </form>
 </div>
@@ -48,15 +79,30 @@
  <div class="sch">
     <form (ngSubmit)="addschedule()">
         <label>Enter Bus Number</label><br/>
-        <input type="number" name="busnumber" [(ngModel)]=schedule.bus.busNumber /><br/>
+        <input type="number" name="busnumber" placeholder="enter bus number"  required #busnumber2="ngModel" [(ngModel)]=schedule.bus.busNumber /><br/>
+        <div *ngIf="busnumber2.invalid && (busnumber2.dirty ||busnumber2.touched)" class="alert alert-danger"> 
+            <div *ngIf="busnumber2.errors.required" style="color:red">Bus Number Required</div>
+        </div>
         <label>Bus Arrival Date</label><br/>
-        <input type="date" name="busArrivalDate" [(ngModel)]=schedule.busArrivalDate /><br/>
+        <input type="date" name="busArrivalDate"  placeholder="enter date"  required #busd="ngModel" [(ngModel)]=schedule.busArrivalDate /><br/>
+        <div *ngIf="busd.invalid && (busd.dirty ||busd.touched)" class="alert alert-danger"> 
+            <div *ngIf="busd.errors.required" style="color:red">Bus Date Required</div>
+        </div>
         <label>Bus Departure Date</label><br/>
-        <input type="date" name="busDepartureDate" [(ngModel)]=schedule.busDepartureDate /><br/>
+        <input type="date" name="busDepartureDate" placeholder="enter date"  required #busd1="ngModel" [(ngModel)]=schedule.busDepartureDate /><br/>
+        <div *ngIf="busd1.invalid && (busd1.dirty ||busd1.touched)" class="alert alert-danger"> 
+            <div *ngIf="busd1.errors.required" style="color:red">Bus Date Required</div>
+        </div>
         <label>Bus Arrival Time</label><br/>
-        <input type="text" name="busArrivaltime" [(ngModel)]=schedule.arrivalTime /><br/>
+        <input type="text" name="busArrivaltime" placeholder="enter time"  required #bust1="ngModel" [(ngModel)]=schedule.arrivalTime /><br/>
+        <div *ngIf="bust1.invalid && (bust1.dirty ||bust1.touched)" class="alert alert-danger"> 
+            <div *ngIf="bust1.errors.required" style="color:red">Bus Time Required</div>
+        </div>
         <label>Bus Departure Time</label><br/>
-        <input type="text" name="busDeparturetime" [(ngModel)]=schedule.departureTime /><br/>
+        <input type="text" name="busDeparturetime" placeholder="enter time"  required #bust2="ngModel" [(ngModel)]=schedule.departureTime /><br/>
+        <div *ngIf="bust2.invalid && (bust2.dirty ||bust2.touched)" class="alert alert-danger"> 
+            <div *ngIf="bust2.errors.required" style="color:red">Bus Time Required</div>
+        </div>
         <button type="submit">Add Schedule</button>
     </form>
 </div> 
@@ -67,11 +113,20 @@
   <div class="seat">
     <form (ngSubmit)="addseat()">
         <label>Enter bus Number</label><br />
-        <input type="number" name="busnumber" [(ngModel)]=busSeatStatus.busSeat.bus.busNumber /><br />
+        <input type="number" name="busnumber" placeholder="enter bus number"  required #bus2="ngModel"  [(ngModel)]=busSeatStatus.busSeat.bus.busNumber /><br />
+        <div *ngIf="bus2.invalid && (bus2.dirty ||bus2.touched)" class="alert alert-danger"> 
+            <div *ngIf="bus2.errors.required" style="color:red">Bus Time Required</div>
+        </div>
         <label>Enter Schedule Id</label><br />
-        <input type="number" name="busnumber" [(ngModel)]=busSeatStatus.busSeat.schedule.scheduleId /><br />
+        <input type="number" name="busnumber"  placeholder="enter schedule id"  required #bus3="ngModel"  [(ngModel)]=busSeatStatus.busSeat.schedule.scheduleId /><br />
+        <div *ngIf="bus3.invalid && (bus3.dirty ||bus3.touched)" class="alert alert-danger"> 
+            <div *ngIf="bus3.errors.required" style="color:red">Id Required</div>
+        </div>
         <label>Add No. of Seats</label><br />
-        <input type="number" name="number" [(ngModel)]=busSeatStatus.noOfSeats/><br />
+        <input type="number" name="number" placeholder="enter no. seats"  required #bus4="ngModel" [(ngModel)]=busSeatStatus.noOfSeats/><br />
+        <div *ngIf="bus4.invalid && (bus4.dirty ||bus4.touched)" class="alert alert-danger"> 
+            <div *ngIf="bus4.errors.required" style="color:red">Id Required</div>
+        </div>
         <button>Add Seat</button>
     </form>
 </div>  

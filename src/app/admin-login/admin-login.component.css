@@ -1,0 +1,31 @@
+.form-container{
+    border: 1px solid black;
+    width: 360px;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    text-align: center;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    border-color: whitesmoke;
+    overflow: x hidden;
+    overflow-y: auto;
+}
+input{
+    width: 250px;
+    height: 35px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+button{
+    background-color: #e40046;
+    color: white;
+    margin-top: 15px;
+    width: 100px;
+    height: 37px;
+    border-radius: 10px;
+}
+#admin{
+    margin-top: 5px;
+}

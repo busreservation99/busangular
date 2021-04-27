@@ -18,6 +18,9 @@ import { TempComponent } from './temp/temp.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { AdminShowAllBusesComponent } from './admin-show-all-buses/admin-show-all-buses.component';
 import { ShowRoutesComponent } from './show-routes/show-routes.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { AdminScheduleComponent } from './admin-schedule/admin-schedule.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +39,10 @@ import { ShowRoutesComponent } from './show-routes/show-routes.component';
     TempComponent,
     AdminDashboardComponent,
     AdminShowAllBusesComponent,
-    ShowRoutesComponent
+    ShowRoutesComponent,
+    AdminLoginComponent,
+    AdminScheduleComponent,
+  
   ],
   imports: [
     BrowserModule,

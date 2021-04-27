@@ -8,7 +8,7 @@ import { AdminserviceService } from '../adminservice.service';
   styleUrls: ['./show-routes.component.css']
 })
 export class ShowRoutesComponent implements OnInit {
-
+ 
   constructor(private adminservice : AdminserviceService,private router: Router) { }
 
   ngOnInit(): void {
@@ -17,6 +17,7 @@ export class ShowRoutesComponent implements OnInit {
   routeData:any;
   busData:any;
   busdest:any;
+  seatdata: any;
   fetchroute(){
     this.adminservice.fetchBusSource(this.busNumber).subscribe(data =>{
       this.busData=data;
@@ -26,6 +27,9 @@ export class ShowRoutesComponent implements OnInit {
     })
     this.adminservice.fetchroute(this.busNumber).subscribe(response =>{
         this.routeData=response;
+    })
+    this.adminservice.fetchSeats(this.busNumber).subscribe(response1=>{
+      this.seatdata = response1;
     })
   }
 }

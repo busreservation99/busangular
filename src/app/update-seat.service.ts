@@ -20,4 +20,9 @@ export class UpdateSeatService implements OnInit {
     return this.http.post(url,null);
   }
 
+  getBookingId(id : number) : Observable<Object>{
+    let url = "http://localhost:8181/addBooking";
+    return this.http.post(url,id);
+  }
+
 }
